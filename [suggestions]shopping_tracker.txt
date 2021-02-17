@@ -2,7 +2,7 @@ suggestions for shopping_tracker
 
 - make the darkmode feature a component
 - create db 
-- 
+- make name appear in the address bar instead of the id
 -
 -
 -
