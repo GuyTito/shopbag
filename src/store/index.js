@@ -67,11 +67,21 @@ export default createStore({
       }
 
       state.bags.unshift(bagData)
+    },
+    REMOVE_ITEM(state, id){
+      state.bags.forEach((bag) => {
+        if (bag.id == id.bagId) {
+          bag.items = bag.items.filter(item => item.id !== id.itemId)
+        }
+      })
     }
   },
   actions: {
     addBag(context, newBag){
       context.commit("ADD_BAG", newBag)
+    },
+    removeItem(context, id){
+      context.commit("REMOVE_ITEM", id)
     }
   },
   getters:{

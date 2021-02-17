@@ -4,7 +4,7 @@
     <h2> {{bag.bag_name}} </h2>
     <!-- <AddItem @add-item="addItem" /> -->
     <div v-for="item in bag.items" :key="item.id">
-      <Item :item="item" />
+      <Item :item="item" @del-item="removeItem" />
     </div>
     <p> {{bag.comment}} </p>
   </div>
@@ -30,7 +30,12 @@ export default {
     }
   },
   methods:{
-    
+    removeItem(itemId) {
+      this.$store.dispatch('removeItem', {
+        bagId: this.bagId,
+        itemId: itemId
+      })
+    }
   }
 }
 </script>
