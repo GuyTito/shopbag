@@ -1,7 +1,7 @@
 # shopping_tracker
 
 A simple app to track grocery items and prices as you're shopping.
-This is the front-end app. This is its [backend](github.com/GuyTito).
+This is the front-end app.
 
 
 
