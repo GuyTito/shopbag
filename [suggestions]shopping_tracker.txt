@@ -1,0 +1,8 @@
+suggestions for shopping_tracker
+
+- make the darkmode feature a component
+- create db 
+- 
+-
+-
+-
