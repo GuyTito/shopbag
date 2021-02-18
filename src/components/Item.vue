@@ -6,7 +6,7 @@
         <span>{{item.market_price}} </span>
         <span>{{item.bought_price}} </span>
         <span>{{item.quantity}}</span>
-        <button @click="$emit('del-item', item.id)" class="del">x</button>
+        <button @click="$emit('del-item', item.item_id)" class="del">x</button>
     </div>
 </template>
 

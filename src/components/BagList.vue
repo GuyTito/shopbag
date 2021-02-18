@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- list of bags -->
-        <div v-for="bag in bags" :key="bag.id">
+        <div v-for="bag in bags" :key="bag.bag_id">
             <BagListItem :bag="bag" />
         </div>
     </div>

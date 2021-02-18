@@ -6,12 +6,13 @@
       <AddItem @add-item="addItem" />
 
       <!-- display item after adding -->
-      <div v-for="item in items" :key="item.name">
+      <div v-for="item in items" :key="item.item_id">
         <span>{{item.item_name}} </span>
         <span>{{item.budget_price}} </span>
         <span>{{item.market_price}} </span>
         <span>{{item.bought_price}} </span>
         <span>{{item.quantity}}</span>
+        <button @click="removeItem(item.item_id)" class="del">x</button>
       </div>
 
       <input type="submit" value="Add Bag" class="btn">
@@ -38,6 +39,7 @@ export default {
     },
     addBagItem(){
       const newBag = {
+        bag_id: new Date().toISOString(),
         bag_name: this.bag_name,
         comment: this.comment,
         items: this.items
@@ -48,6 +50,9 @@ export default {
 
       // this.bag_name = ''
       // this.comment =''
+    },
+    removeItem(itemId){
+      this.items = this.items.filter(item => item.item_id !== itemId)
     }
   }
     

@@ -4,11 +4,11 @@ export default createStore({
   state: {
     bags: [
       {
-        id: 1,
+        bag_id: 1,
         bag_name: 'Football kit',
         items: [
           {
-            id:1,
+            item_id:1,
             item_name: 'boots',
             budget_price: 120.50,
             market_price: 0.00,
@@ -18,7 +18,7 @@ export default createStore({
 
           },
           {
-            id:2,
+            item_id:2,
             item_name: 'football socks',
             budget_price: 10.00,
             market_price: 15.05,
@@ -31,11 +31,11 @@ export default createStore({
         comment: 'A pair of boots is one quantity. Same for socks and shin guard.'
       },
       {
-        id: 2,
+        bag_id: 2,
         bag_name: 'general shopping',
         items: [
           {
-            id:1,
+            item_id:1,
             item_name: 'detergent',
             budget_price: 10.00,
             market_price: 15.00,
@@ -44,7 +44,7 @@ export default createStore({
             quantity: 2
           },
           {
-            id:2,
+            item_id:2,
             item_name: 'tomatoes',
             budget_price: 30.00,
             market_price: 25.00,
@@ -60,7 +60,7 @@ export default createStore({
   mutations: {
     ADD_BAG(state, newBag){
       let bagData = {
-        id: new Date().toISOString(),
+        bag_id: newBag.bag_id,
         bag_name: newBag.bag_name,
         comment: newBag.comment,
         items: newBag.items
@@ -68,10 +68,10 @@ export default createStore({
 
       state.bags.unshift(bagData)
     },
-    REMOVE_ITEM(state, id){
+    REMOVE_ITEM(state, IDs){
       state.bags.forEach((bag) => {
-        if (bag.id == id.bagId) {
-          bag.items = bag.items.filter(item => item.id !== id.itemId)
+        if (bag.bag_id == IDs.bagId) {
+          bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
         }
       })
     }
@@ -80,8 +80,8 @@ export default createStore({
     addBag(context, newBag){
       context.commit("ADD_BAG", newBag)
     },
-    removeItem(context, id){
-      context.commit("REMOVE_ITEM", id)
+    removeItem(context, IDs){
+      context.commit("REMOVE_ITEM", IDs)
     }
   },
   getters:{
@@ -89,7 +89,7 @@ export default createStore({
       return state.bags
     },
     getBag: (state) => (bagId) => {
-      return state.bags.filter(bag => bag.id == bagId)[0]
+      return state.bags.filter(bag => bag.bag_id == bagId)[0]
     }
   },
   modules: {

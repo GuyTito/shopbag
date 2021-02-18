@@ -27,6 +27,7 @@ export default {
     methods: {
         addItem(){
             const newItem = {
+                item_id : new Date().toISOString(),
                 item_name: this.item_name,
                 budget_price: this.budget_price,
                 market_price: this.market_price,
