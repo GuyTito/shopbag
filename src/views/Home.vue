@@ -4,7 +4,7 @@
       <router-link to="/add">+</router-link>
 
       <!-- list of bag links -->
-      <BagList :bags="bags" />
+      <BagList :bags="bags" @remove-bag="removeBag" />
   </div>
 </template>
 
@@ -18,6 +18,11 @@ export default {
     computed: {
       bags() {
         return this.$store.getters.getBags
+      }
+    },
+    methods:{
+      removeBag(bagId) {
+        this.$store.dispatch('removeBag', bagId)
       }
     }
 }

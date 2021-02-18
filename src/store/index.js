@@ -74,6 +74,9 @@ export default createStore({
           bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
         }
       })
+    },
+    REMOVE_BAG(state, bagId){
+      state.bags = state.bags.filter(bag => bag.bag_id !== bagId)
     }
   },
   actions: {
@@ -82,6 +85,9 @@ export default createStore({
     },
     removeItem(context, IDs){
       context.commit("REMOVE_ITEM", IDs)
+    },
+    removeBag(context, bagId){
+      context.commit("REMOVE_BAG", bagId)
     }
   },
   getters:{
