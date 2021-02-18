@@ -9,12 +9,16 @@ const routes = [
     component: Home
   },
   {
-    path: '/bags/:id',
+    path: '/bag/:id',
     component: () => import('@/views/BagPage.vue')
   },
   {
     path: '/add',
     component: () => import('@/views/AddBagPage.vue')
+  },
+  {
+    path: '/edit/:id',
+    component: () => import('@/views/EditPage.vue')
   },
   {
     path: '/about',

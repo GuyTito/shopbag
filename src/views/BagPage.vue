@@ -2,7 +2,8 @@
 <!-- list of items -->
   <div>
     <h2> {{bag.bag_name}} </h2>
-    <!-- <AddItem @add-item="addItem" /> -->
+    <router-link :to="`/edit/${bag.bag_id}`">Edit</router-link>
+
     <div v-for="item in bag.items" :key="item.item_id">
       <Item :item="item" @del-item="removeItem" />
     </div>

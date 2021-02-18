@@ -1,20 +1,10 @@
 <template>
   <div>
     <form @submit="addBagItem">
-      <input type="text" name="bag_name" id="bag_name" v-model="bag_name" placeholder="Shopping Name">
+      <input type="text" name="bag_name" id="bag_name" v-model="bag_name" required placeholder="Shopping Name">
       <textarea name="comment" id="comment" cols="70" rows="3" v-model="comment" placeholder="Some notes..."></textarea>
       <AddItem @add-item="addItem" />
-
-      <!-- display item after adding -->
-      <div v-for="item in items" :key="item.item_id">
-        <span>{{item.item_name}} </span>
-        <span>{{item.budget_price}} </span>
-        <span>{{item.market_price}} </span>
-        <span>{{item.bought_price}} </span>
-        <span>{{item.quantity}}</span>
-        <button @click="removeItem(item.item_id)" class="del">x</button>
-      </div>
-
+      <DisplayItems :items="items"  />
       <input type="submit" value="Add Bag" class="btn">
     </form>
   </div>
@@ -22,10 +12,11 @@
 
 <script>
 import AddItem from "../components/AddItem";
+import DisplayItems from "../components/DisplayItems";
 
 export default {
   name: 'AddBag',
-  components: {AddItem },
+  components: {AddItem, DisplayItems },
   data(){
     return{
       bag_name:'',

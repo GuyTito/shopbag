@@ -1,7 +1,7 @@
 <template>
     <div>
         <form @submit.prevent="addItem" >
-        <input type="text" v-model="item_name" name="item_name" placeholder="shopping item">
+        <input type="text" v-model="item_name" name="item_name" required placeholder="shopping item">
         <input type="number" min="0.00" step="0.01" v-model="budget_price" name="budget_price" placeholder="budget price">
         <input type="number" min="0.00" step="0.01" v-model="market_price" name="market_price" placeholder="market price?">
         <input type="number" min="0" step="1" pattern="\d+" v-model="quantity" name="quantity" placeholder="quantity">

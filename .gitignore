@@ -1,8 +1,9 @@
-#unnecessary files
+#my files
 HelloWorld.vue
 ShoppingItems.vue
 Search.vue
 /assets
+[jotter]shopping_tracker.txt
 
 
 .DS_Store
