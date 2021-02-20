@@ -77,6 +77,13 @@ export default createStore({
     },
     REMOVE_BAG(state, bagId){
       state.bags = state.bags.filter(bag => bag.bag_id !== bagId)
+    },
+    UPDATE_BAG(state, updatedBag){
+      state.bags.forEach(bag => {
+        if (bag.bag_id == updatedBag.bag_id) {
+          this.bag = updatedBag
+        }
+      })
     }
   },
   actions: {
@@ -88,6 +95,9 @@ export default createStore({
     },
     removeBag(context, bagId){
       context.commit("REMOVE_BAG", bagId)
+    },
+    updateBag(context, updatedBag){
+      context.commit("UPDATE_BAG", updatedBag)
     }
   },
   getters:{

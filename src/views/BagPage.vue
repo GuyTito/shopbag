@@ -2,7 +2,7 @@
 <!-- list of items -->
   <div>
     <h2> {{bag.bag_name}} </h2>
-    <router-link :to="`/edit/${bag.bag_id}`">Edit</router-link>
+    <router-link :to="`/edit/${bag.bag_id}`">Add/Edit</router-link>
 
     <div v-for="item in bag.items" :key="item.item_id">
       <Item :item="item" @del-item="removeItem" />
@@ -18,7 +18,7 @@ import Item from "../components/Item";
 
 
 export default {
-  name: 'Bag',
+  name: 'BagPage',
   components: {Item },
   data(){
     return {

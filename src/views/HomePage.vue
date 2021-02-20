@@ -13,7 +13,7 @@ import BagList from '../components/BagList'
 
 
 export default {
-    name: 'Bag',
+    name: 'HomePage',
     components: {BagList },
     computed: {
       bags() {

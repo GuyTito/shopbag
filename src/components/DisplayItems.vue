@@ -6,13 +6,14 @@
         <span>{{item.market_price}} </span>
         <span>{{item.bought_price}} </span>
         <span>{{item.quantity}}</span>
-        <button @click="removeItem(item.item_id)" class="del">x</button>
+        <button @click="$emit('remove-item', item.item_id)" class="del">x</button>
     </div>
 </template>
 
 <script>
 export default {
-    props:['items']
+    props:['items'],
+    emits: ['remove-item']
 }
 </script>
 
