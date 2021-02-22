@@ -5,4 +5,7 @@ suggestions for shopping_tracker
 - make name appear in the address bar instead of the id
 - each page should have its own heading e.g home page should have "Your carts" etc
 - build a search page to search for bags and items
--
+- remove hash from url
+- show name in url instead of id
+- 
+- 
