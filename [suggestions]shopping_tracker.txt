@@ -7,5 +7,6 @@ suggestions for shopping_tracker
 - build a search page to search for bags and items
 - remove hash from url
 - show name in url instead of id
+- use the apply directive in tailwind for your styling
 - 
 - 
