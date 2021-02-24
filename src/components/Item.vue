@@ -2,11 +2,13 @@
     <div :class="{'is-purchased': item.purchased}" class="item">
         <input type="checkbox" @change="markPurchased">
         <span>{{item.item_name}} </span>
-        <span>{{item.budget_price}} </span>
-        <span>{{item.market_price}} </span>
-        <span>{{item.bought_price}} </span>
-        <span>{{item.quantity}}</span>
-        <button @click="$emit('del-item', item.item_id)" class="del">x</button>
+        <div>
+            <span>{{item.budget_price}} </span>
+            <span>{{item.market_price}} </span>
+            <span>{{item.bought_price}} </span>
+            <span>{{item.quantity}}</span>
+            <button @click="$emit('del-item', item.item_id)" class="del">x</button>
+        </div>
     </div>
 </template>
 

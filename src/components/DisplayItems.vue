@@ -4,8 +4,8 @@
         <span>{{item.item_name}} </span>
         <span>{{item.budget_price}} </span>
         <span>{{item.market_price}} </span>
-        <span>{{item.bought_price}} </span>
         <span>{{item.quantity}}</span>
+        <span>{{item.bought_price}} </span>
         <button @click="$emit('remove-item', item.item_id)" class="del">x</button>
     </div>
 </template>
