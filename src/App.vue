@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <header>
-      <h1>Shopping Tracker</h1>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> | 
+      <h1><router-link to="/">ShopBag</router-link></h1>
+      <router-link to="/bags">Bags</router-link> |
       <button class="btn" id="dark" @click="darkMode"><i class="fa fa-adjust"></i></button>
     </header>
     <router-view/>
