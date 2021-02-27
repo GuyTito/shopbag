@@ -7,7 +7,7 @@
     <div v-for="item in bag.items" :key="item.item_id">
       <Item :item="item" @del-item="removeItem" />
     </div>
-    <p> {{bag.comment}} </p>
+    <p> <b>Your Notes</b> <br> {{bag.comment}} </p>
   </div>
 </template>
 

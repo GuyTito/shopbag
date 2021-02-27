@@ -1,7 +1,8 @@
 <template>
   <div>
+    <p>Create bag and items to buy</p>
     <form @submit="addBagItem">
-      <input type="text" name="bag_name" id="bag_name" v-model="bag_name" required placeholder="Shopping Name">
+      <input type="text" name="bag_name" id="bag_name" v-model="bag_name" required placeholder="Name your shopping">
       <textarea name="comment" id="comment" cols="70" rows="3" v-model="comment" placeholder="Some notes..."></textarea>
       <AddItem @add-item="addItem" />
       <DisplayItems :items="items" @remove-item="removeItem" />
