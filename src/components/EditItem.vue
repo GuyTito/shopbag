@@ -24,7 +24,7 @@
 <script>
 
 export default {
-    name: "AddItem",
+    name: "EdiItem",
     props: ['items'],
     data() {
         return {

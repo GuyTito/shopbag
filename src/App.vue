@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <header>
-      <h1><router-link to="/">ShopBag</router-link></h1>
-      <router-link to="/bags">Bags</router-link> |
-      <button class="btn" id="dark" @click="darkMode"><i class="fa fa-adjust"></i></button>
-    </header>
+    <Header />
     <router-view/>
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header";
+
 export default {
   name: "app",
+  components: { Header },
   methods: {
     darkMode() {
       document.body.classList.toggle("dark-mode")
