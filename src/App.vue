@@ -35,48 +35,18 @@ export default {
 </script>
 
 <style>
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+  } */
   
 
-body {
-  font-family: Helvetica, sans-serif;
-  line-height: 1.4;
-}
 body.dark-mode, body.dark-mode input[type="text"], body.dark-mode .todo-item {
   color: #eee;
   background: #121212;
 }
 
-header{
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-header a {
-  color: #fff;
-  text-decoration: none;
-}
-header a.router-link-exact-active {
-  color: #42b983;
-}
-
-.btn{
-  display: inline-block;
-  border: none;
-  background: #555;
-  color: #fff;
-  padding: 7px 20px;
-  cursor: pointer;
-  outline:none
-}
-.btn:hover{
-  background: #666;
-}
 
 /* @media (prefers-color-scheme: dark) {
   body {

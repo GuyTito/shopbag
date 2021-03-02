@@ -1,5 +1,5 @@
 //variables
-$primary: #c16642;
+$primary: #ffc500;
 $secondary: #f4f4f4;
 $border-radius: 0;
 $border-radius-sm: 0;
@@ -26,4 +26,4 @@ $utilities: map-merge(
 );
 
 @import "style";
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
