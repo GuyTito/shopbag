@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <hr style="height: 2px; width:100%; margin:0" class="bg-primary" />
+      <hr class="bg-primary" />
     </div>
   </div>
 </template>
@@ -48,5 +48,9 @@ a:hover, a:focus {
 .ovdden{
     height: 60px;
     overflow: hidden;
+}
+
+hr{
+    height: 2px; width:100%; margin:0
 }
 </style>
