@@ -1,19 +1,52 @@
 <template>
-    <div>
-        <!-- list of bags -->
-        <div v-for="bag in bags" :key="bag.bag_id">
-            <BagListItem :bag="bag" />
-            <button @click="$emit('remove-bag', bag.bag_id)" class="del">x</button>
+  <div class="v-center">
+    <!-- list of bags -->
+    <div v-for="bag in bags" :key="bag.bag_id">
+      <div class="p-2 d-flex justify-content-between">
+        <div class="text-dark ovdden w-100">
+          <BagListItem :bag="bag" />
         </div>
+
+        <div class="mt-2">
+          <div @click="$emit('remove-bag', bag.bag_id)" class="bg-secondary rounded-circle p-2" >
+            <img
+              id="dark"
+              src="@/assets/icons/bin.svg"
+              alt="bags"
+              height="25"
+              width="25"
+            />
+          </div>
+        </div>
+      </div>
+
+      <hr style="height: 2px; width:100%; margin:0" class="bg-primary" />
     </div>
+  </div>
 </template>
 
 <script>
-import BagListItem from "../components/BagListItem.vue"
+import BagListItem from "../components/BagListItem.vue";
 
 export default {
-    name: 'BagList',
-    components: {BagListItem},
-    props: ['bags']
-}
+  name: "BagList",
+  components: { BagListItem },
+  props: ["bags"],
+};
 </script>
+
+<style scoped>
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.ovdden{
+    height: 60px;
+    overflow: hidden;
+}
+</style>

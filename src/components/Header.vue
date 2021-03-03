@@ -1,33 +1,40 @@
 <template>
-  <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+  <nav class="navbar navbar-expand navbar-light bg-primary sticky-top shadow ">
     <div class="container-fluid">
-      <router-link to="/" class="navbar-brand" href="#">
-        <img src="@/assets/img/logo.png" height="50" width="150" />
+      <router-link to="/" class="navbar-brand">
+        <img src="@/assets/img/logo_shopbag.svg" height="40" width="130" />
       </router-link>
 
       <div class="navbar-nav d-flex">
-        <router-link to="/bags" class="nav-link" href="#">
-          <button class="btn btn-primary">Demo</button>
+        <router-link to="/bags" class="nav-link active mt-2" aria-current="page">
+          <img
+            id="dark"
+            src="@/assets/icons/shopbags.svg"
+            alt="bags"
+            height="25"
+            width="25"
+          />
         </router-link>
-        <router-link
-          to="/bags"
-          class="nav-link active"
-          aria-current="page"
-          href="#"
-        >
-          Bags
+
+        <router-link to="/search" class="nav-link m-2">
+          <img
+            id="dark"
+            src="@/assets/icons/search.svg"
+            alt="search"
+            height="20"
+            width="20"
+          />
         </router-link>
-        <router-link to="/bags" class="nav-link" href="#">
+        <div class="nav-link m-2">
           <img
             id="dark"
             @click="darkMode"
             src="@/assets/icons/moon-fill.svg"
-            alt=""
-            height="15"
-            width="15"
-            class=""
+            alt="darkmode"
+            height="20"
+            width="20"
           />
-        </router-link>
+        </div>
       </div>
     </div>
   </nav>
