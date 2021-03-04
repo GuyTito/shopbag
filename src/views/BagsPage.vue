@@ -2,7 +2,7 @@
   <div class="container-fluid mt-4 page-head">
     <div class="d-flex justify-content-between mb-2">
       <div class="mx-2">Your Shopping Bags</div>
-      <router-link class="mx-3" to="/add">
+      <router-link to="/add" class="mx-3">
         <img
           src="@/assets/icons/add.svg"
           alt="add"
@@ -12,7 +12,7 @@
       </router-link>
     </div>
 
-    <hr style="height: 2px; width: 100%; margin: 0" class="bg-primary" />
+    <hr class="bg-primary" />
 
     <!-- list of bag links -->
     <BagList :bags="bags" @remove-bag="removeBag" />

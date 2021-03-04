@@ -49,7 +49,5 @@ a:hover, a:focus {
     overflow: hidden;
 }
 
-hr{
-    height: 2px; width:100%; margin:0
-}
+
 </style>
