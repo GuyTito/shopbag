@@ -10,9 +10,8 @@
         <div class="mt-2">
           <div @click="$emit('remove-bag', bag.bag_id)" class="bg-secondary rounded-circle p-2" >
             <img
-              id="dark"
               src="@/assets/icons/bin.svg"
-              alt="bags"
+              alt="trash"
               height="25"
               width="25"
             />

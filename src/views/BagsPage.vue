@@ -4,9 +4,8 @@
       <div class="mx-2">Your Shopping Bags</div>
       <router-link class="mx-3" to="/add">
         <img
-          id="dark"
           src="@/assets/icons/add.svg"
-          alt="bags"
+          alt="add"
           height="25"
           width="25"
         />
@@ -17,6 +16,16 @@
 
     <!-- list of bag links -->
     <BagList :bags="bags" @remove-bag="removeBag" />
+
+    <router-link class="fab shadow bg-light" to="/add">
+      <img
+        src="@/assets/icons/add.svg"
+        alt="add"
+        height="25"
+        width="25"
+        class="mt-3"
+      />
+    </router-link>
   </div>
 </template>
 
@@ -39,5 +48,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
 </style>
