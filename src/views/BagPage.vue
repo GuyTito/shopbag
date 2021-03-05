@@ -15,7 +15,7 @@
 
     <hr class="bg-primary" />
 
-    <div class="v-center  p-2">
+    <div class="v-center p-2">
       <div v-for="item in bag.items" :key="item.item_id">
         <Item :item="item" @del-item="removeItem" />
         <hr class="bg-primary" />

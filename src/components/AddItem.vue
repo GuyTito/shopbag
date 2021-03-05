@@ -46,7 +46,7 @@
         name="bought_price"
         placeholder="price you  bought"
       />
-      <div class="">
+      <div class="d-flex justify-content-center mb-2">
         <input
           class="btn btn-primary mb-2"
           type="submit"
@@ -75,11 +75,11 @@ export default {
       const newItem = {
         item_id: new Date().toISOString(),
         item_name: this.item_name,
-        budget_price: this.budget_price,
-        market_price: this.market_price,
+        budget_price: (this.budget_price != null) ? this.budget_price : 0,
+        market_price: (this.market_price != null) ? this.market_price : 0,
         purchased: false,
-        bought_price: this.bought_price,
-        quantity: this.quantity,
+        bought_price: (this.bought_price != null) ? this.bought_price : 0,
+        quantity: (this.quantity != null) ? this.quantity : 0,
       };
       this.$emit("add-item", newItem);
 

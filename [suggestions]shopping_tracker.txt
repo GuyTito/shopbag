@@ -1,12 +1,11 @@
 suggestions for shopping_tracker
 
 - make the darkmode feature a component
-- create db 
-- make name appear in the address bar instead of the id (use slug in laravel for fullstack version)
+- create db (use indexdDB)
+- make name appear in the address bar instead of the id (use slug in indexDb)
 - each page should have its own heading e.g home page should have "Your carts" etc
-- build a search page to search for bags and items (for fullstack version)
-- use the apply directive in tailwind for your styling
-- create frontend version for demo and fullstack version for full use
-- host frontend version on netlify
-- install fontawsome and tailwind
+- build a search page to search for bags and items
+- host on netlify
+- make app pwa which can work without internet
+- add feature to select currency symbol
 - 

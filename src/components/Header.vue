@@ -25,7 +25,7 @@
             width="20"
           />
         </router-link>
-        <div class="nav-link m-2">
+        <div class="nav-link mt-2">
           <img
             id="dark"
             @click="darkMode"

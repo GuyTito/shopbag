@@ -13,8 +13,8 @@
         <div class="text-black-50">
           <span>₵{{ item.budget_price }} </span>
           <span class="ms-4">₵{{ item.market_price }} </span>
-          <span class="ms-4">₵{{ item.bought_price }} </span>
           <span class="ms-4">{{ item.quantity }}</span>
+          <span class="ms-4">₵{{ item.bought_price }} </span>
         </div>
       </div>
     </div>

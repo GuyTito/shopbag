@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="container-fluid mt-4 page-head">
     <p>Create bag and items to buy</p>
-    <form @submit="addBagItem" class="form-login">
+    <form @submit="addBagItem" class="v-center">
       <input
         type="text"
         name="bag_name"
@@ -23,7 +23,7 @@
       <AddItem @add-item="addItem" />
       <DisplayItems :items="items" @remove-item="removeItem" />
       <div class="d-grid">
-        <input type="submit" value="Add Bag" class="btn btn-primary" />
+        <input type="submit" value="Create Bag" class="btn btn-primary" />
       </div>
     </form>
   </div>
