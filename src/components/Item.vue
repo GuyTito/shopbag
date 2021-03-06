@@ -11,10 +11,10 @@
           <h5>{{ item.item_name }}</h5>
         </div>
         <div class="text-black-50">
-          <span>₵{{ item.budget_price }} </span>
-          <span class="ms-4">₵{{ item.market_price }} </span>
+          <span>{{currency}} {{ item.budget_price }} </span>
+          <span class="ms-4">{{currency}} {{ item.market_price }} </span>
           <span class="ms-4">{{ item.quantity }}</span>
-          <span class="ms-4">₵{{ item.bought_price }} </span>
+          <span class="ms-4">{{currency}} {{ item.bought_price }} </span>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
 <script>
 export default {
   name: "Item",
-  props: ["item"],
+  props: ["item", "currency"],
   methods: {
     markPurchased() {
       this.item.purchased = !this.item.purchased;

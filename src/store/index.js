@@ -6,6 +6,7 @@ export default createStore({
       {
         bag_id: 1,
         bag_name: 'Football kit',
+        currency: "₵",
         items: [
           {
             item_id:1,
@@ -33,6 +34,7 @@ export default createStore({
       {
         bag_id: 2,
         bag_name: 'general shopping',
+        currency: "₵",
         items: [
           {
             item_id:1,
@@ -63,7 +65,8 @@ export default createStore({
         bag_id: newBag.bag_id,
         bag_name: newBag.bag_name,
         comment: newBag.comment,
-        items: newBag.items
+        items: newBag.items,
+        currency: newBag.currency
       }
 
       state.bags.unshift(bagData)

@@ -8,7 +8,6 @@
       <div class="navbar-nav d-flex">
         <router-link to="/bags" class="nav-link active mt-2" aria-current="page">
           <img
-            id="dark"
             src="@/assets/icons/shopbags.svg"
             alt="bags"
             height="25"
@@ -18,7 +17,6 @@
 
         <router-link to="/search" class="nav-link m-2">
           <img
-            id="dark"
             src="@/assets/icons/search.svg"
             alt="search"
             height="20"

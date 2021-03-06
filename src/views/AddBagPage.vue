@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid mt-4 page-head">
+  <div class="container-fluid my-4 page-head">
     <p>Create bag and items to buy</p>
     <form @submit="addBagItem" class="v-center">
       <input
@@ -20,8 +20,23 @@
         v-model="comment"
         placeholder="Some notes..."
       ></textarea>
+
+      <div class="mb-2 form-control">
+        <span class="me-3">Select preferred currency:</span>
+        <br>
+        <input class="me-1" type="radio" id="cedi" value="₵" v-model="currency" required />
+        <label class="me-3" for="cedi">₵</label>
+
+        <input class="me-1" type="radio" id="dollar" value="$" v-model="currency" required />
+        <label class="me-3" for="dollar">$</label>
+        
+        <input class="me-1" type="radio" id="naira" value="₦" v-model="currency" required />
+        <label class="me-3" for="naira">₦</label>
+      </div>
+
       <AddItem @add-item="addItem" />
-      <DisplayItems :items="items" @remove-item="removeItem" />
+      <DisplayItems :items="items" :currency="currency" @remove-item="removeItem" />
+
       <div class="d-grid">
         <input type="submit" value="Create Bag" class="btn btn-primary" />
       </div>
@@ -41,6 +56,7 @@ export default {
       bag_name: "",
       comment: "",
       items: [],
+      currency: "₵"
     };
   },
   methods: {
@@ -52,10 +68,11 @@ export default {
         bag_id: new Date().toISOString(),
         bag_name: this.bag_name,
         comment: this.comment,
+        currency: this.currency,
         items: this.items,
       };
       this.$store.dispatch("addBag", newBag);
-      this.$router.push(`/`);
+      this.$router.push(`/bags`);
     },
     removeItem(itemId) {
       this.items = this.items.filter((item) => item.item_id !== itemId);

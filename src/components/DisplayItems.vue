@@ -5,10 +5,10 @@
       <div class="ms-2">
         <div>{{ item.item_name }}</div>
         <div>
-          <span>₵{{ item.budget_price }} </span>
-          <span class="ms-4">₵{{ item.market_price }} </span>
+          <span>{{currency}} {{ item.budget_price }} </span>
+          <span class="ms-4">{{currency}} {{ item.market_price }} </span>
           <span class="ms-4">{{ item.quantity }}</span>
-          <span class="ms-4">₵{{ item.bought_price }} </span>
+          <span class="ms-4">{{currency}} {{ item.bought_price }} </span>
         </div>
       </div>
 
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  props: ["items"],
+  props: ["items", "currency"],
   emits: ["remove-item"],
 };
 </script>
