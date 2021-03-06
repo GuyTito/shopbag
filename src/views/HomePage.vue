@@ -117,21 +117,20 @@
         </router-link>
       </div>
     </div>
-    <div class="footer bg-secondary p-5">
-      <div class="container p-5">
-        <span class="text-muted">Place sticky footer content here.</span>
-        <p class="credits">
-          Made with <span class="love">♥</span> by
-          <a class="green" href="https://twitter.com/QuistKofi" target="blank">Kofi Quist</a>
-          <br />
-          <a
-            class="orange"
-            href="http://zenorocha.mit-license.org/"
-            target="blank"
-            >GitHub</a
-          >
-        </p>
-      </div>
+
+    <div class="text-center bg-secondary p-5">
+      <a
+        class="text-decoration-none text-muted mx-3"
+        href="https://twitter.com/QuistKofi"
+        target="blank"
+        >My Twitter</a
+      >
+      <a
+        class="text-decoration-none text-muted mx-4"
+        href="https://github.com/GuyTito/shopping_tracker"
+        target="blank"
+        >GitHub Source</a
+      >
     </div>
   </div>
 </template>
