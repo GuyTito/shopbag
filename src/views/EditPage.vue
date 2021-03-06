@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid my-4 page-head">
-    <p>Update bag and items</p>
-    <form @submit="updateBagItem" class="v-center">
+    <h4>Update bag and items</h4>
+    <form @submit="updateBagItem" class="v-center mt-3">
       <input
         class="form-control mb-2"
         type="text"

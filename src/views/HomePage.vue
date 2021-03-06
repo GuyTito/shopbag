@@ -118,7 +118,7 @@
       </div>
     </div>
 
-    <div class="text-center bg-secondary p-5">
+    <footer class="text-center bg-secondary p-5">
       <a
         class="text-decoration-none text-muted mx-3"
         href="https://twitter.com/QuistKofi"
@@ -131,7 +131,7 @@
         target="blank"
         >GitHub Source</a
       >
-    </div>
+    </footer>
   </div>
 </template>
 <script>

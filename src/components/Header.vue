@@ -5,8 +5,8 @@
         <img src="@/assets/img/logo_shopbag.svg" height="40" width="130" />
       </router-link>
 
-      <div class="navbar-nav d-flex">
-        <router-link to="/bags" class="nav-link active mt-2" aria-current="page">
+      <div class="navbar-nav">
+        <router-link to="/bags" class="nav-link active mt-2 mx-4" aria-current="page">
           <img
             src="@/assets/icons/shopbags.svg"
             alt="bags"
@@ -15,14 +15,6 @@
           />
         </router-link>
 
-        <router-link to="/search" class="nav-link m-2">
-          <img
-            src="@/assets/icons/search.svg"
-            alt="search"
-            height="20"
-            width="20"
-          />
-        </router-link>
         <div class="nav-link mt-2">
           <img
             id="dark"

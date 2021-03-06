@@ -2,14 +2,20 @@
   <div class="container-fluid mt-4 page-head">
     <div class="d-flex justify-content-between mb-2">
       <div class="mx-2">Your Shopping Bags</div>
-      <router-link to="/add" class="mx-3">
-        <img
-          src="@/assets/icons/add.svg"
-          alt="add"
-          height="25"
-          width="25"
-        />
-      </router-link>
+      <div>
+        <!-- <router-link to="/search" class="me-2">
+          <img
+            src="@/assets/icons/search.svg"
+            alt="search"
+            height="20"
+            width="20"
+          />
+        </router-link> -->
+
+        <router-link to="/add" class="mx-3">
+          <img src="@/assets/icons/add.svg" alt="add" height="25" width="25" />
+        </router-link>
+      </div>
     </div>
 
     <hr class="bg-primary" />
@@ -49,5 +55,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

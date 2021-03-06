@@ -3,6 +3,7 @@
   <div class="container-fluid mt-4 page-head">
     <div class="d-flex justify-content-between mb-2">
       <h2 class="mx-2">{{ bag.bag_name }}</h2>
+
       <router-link :to="`/edit/${bag.bag_id}`" class="mx-3">
         <img
           src="@/assets/icons/pencil.svg"
@@ -11,6 +12,7 @@
           width="25"
         />
       </router-link>
+
     </div>
 
     <hr class="bg-primary" />
