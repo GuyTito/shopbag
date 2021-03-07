@@ -3,7 +3,7 @@ suggestions for shopping_tracker
 - make the darkmode feature a component
 - create db (use indexdDB)
 - make name appear in the address bar instead of the id (use slug in indexDb)
-- each page should have its own heading e.g home page should have "Your carts" etc
+- each page should have its own heading e.g home page should have "Your bags" etc
 - build a search page to search for bags and items
 - host on netlify
 - make app pwa which can work without internet
