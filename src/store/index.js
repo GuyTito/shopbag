@@ -40,6 +40,7 @@ export default createStore({
     async getBags(context) {
       context.state.bags = [];
       let bags = await idb.getBags();
+      console.log('getting...' + bags);
       bags.forEach(c => {
         context.state.bags.push(c);
       });
@@ -47,25 +48,26 @@ export default createStore({
     // addBag(context, newBag){
     //   context.commit("ADD_BAG", newBag)
     // },
-    async addBag(bag) {
+    async addBag(context, bag) {
+      // console.log('$store... ' + JSON.stringify(bag))
       await idb.addBag(bag);
     },
     // removeItem(context, IDs){
     //   context.commit("REMOVE_ITEM", IDs)
     // },
-    async removeItem(IDs){
+    async removeItem(context, IDs){
       await idb.removeItem(IDs)
     },
     // removeBag(context, bagId){
     //   context.commit("REMOVE_BAG", bagId)
     // },
-    async removeBag(bag) {
+    async removeBag(context, bag) {
       await idb.removeBag(bag); 
     },
     // updateBag(context, updatedBag){
     //   context.commit("UPDATE_BAG", updatedBag)
     // },
-    async updateBag(bag) {
+    async updateBag(context, bag) {
       await idb.updateBag(bag);
     }
   },
@@ -77,6 +79,6 @@ export default createStore({
       return state.bags.filter(bag => bag.bag_id == bagId)[0]
     }
   },
-  modules: {
-  }
+  // modules: {
+  // }
 })

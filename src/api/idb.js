@@ -1,7 +1,7 @@
 import Localbase from "localbase";
 
 let db = new Localbase("shopbagDb");
-db.config.debug = false;
+db.config.debug = true;
 
 export default {
 
@@ -10,17 +10,23 @@ export default {
   },
 
   async updateBag(bag) {
-    await db.collection("bags").doc({id: bag.id}).set(bag);
+    await db.collection("bags").doc({id: bag.bag_id}).set(bag);
     console.log("updated");
   },
 
   async addBag(bag) {
-    await db.collection("bags").add(bag);
-    console.log("added");
+    try {
+      console.log('adding... ' + JSON.stringify(bag));
+      await db.collection("bags").add(bag);
+      console.log("added");
+    } catch (e) {
+      console.log(e)
+    }
+    
   },
 
   async removeBag(bag) {
-    await db.collection("bags").doc({id: bag.id}).delete();
+    await db.collection("bags").doc({id: bag.bag_id}).delete();
     console.log("deleted");
   },
 

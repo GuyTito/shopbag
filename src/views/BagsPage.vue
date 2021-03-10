@@ -44,7 +44,11 @@ export default {
   computed: {
     bags() {
       return this.$store.getters.getBags;
+      // return this.$store.state.bags;
     },
+  },
+  created() {
+    this.$store.dispatch('getBags');
   },
   methods: {
     async removeBag(bagId) {
