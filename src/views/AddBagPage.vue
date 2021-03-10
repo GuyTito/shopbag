@@ -55,24 +55,24 @@ export default {
     return {
       bag_name: "",
       comment: "",
-      items: [],
-      currency: "₵"
+      currency: "₵",
+      items: []
     };
   },
   methods: {
     addItem(newItem) {
       this.items.push(newItem);
     },
-    addBagItem() {
+    async addBagItem() {
       const newBag = {
         bag_id: new Date().toISOString(),
         bag_name: this.bag_name,
         comment: this.comment,
         currency: this.currency,
-        items: this.items,
+        items: this.items
       };
-      this.$store.dispatch("addBag", newBag);
-      this.$router.push(`/bags`);
+      await this.$store.dispatch("addBag", newBag);
+      this.$router.push('/bags');
     },
     removeItem(itemId) {
       this.items = this.items.filter((item) => item.item_id !== itemId);

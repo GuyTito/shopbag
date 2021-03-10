@@ -1,25 +1,35 @@
 import Localbase from "localbase";
 
-let db = new Localbase("ShopBag");
+let db = new Localbase("shopbagDb");
 db.config.debug = false;
 
 export default {
-  async getCats() {
-    return await db.collection("cats").get();
+
+  async getBags() {
+    return await db.collection("bags").get();
   },
 
-  async editCat(cat) {
-    await db.collection("cats").doc({id: cat.id}).set(cat);
+  async updateBag(bag) {
+    await db.collection("bags").doc({id: bag.id}).set(bag);
     console.log("updated");
   },
 
-  async addCat(cat) {
-    await db.collection("cats").add(cat);
+  async addBag(bag) {
+    await db.collection("bags").add(bag);
     console.log("added");
   },
 
-  async deleteCat(cat) {
-    await db.collection("cats").doc({id: cat.id}).delete();
+  async removeBag(bag) {
+    await db.collection("bags").doc({id: bag.id}).delete();
     console.log("deleted");
   },
+
+  async removeItem(IDs){
+    await db.collection('bags').doc({ id: IDs.bagId }).get().then(bag => {
+        bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
+        this.updateBag(bag)
+        console.log('removed item')
+    })
+  },
+  
 };

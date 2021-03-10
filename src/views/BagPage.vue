@@ -50,8 +50,8 @@ export default {
     },
   },
   methods: {
-    removeItem(itemId) {
-      this.$store.dispatch("removeItem", {
+    async removeItem(itemId) {
+      await this.$store.dispatch("removeItem", {
         bagId: this.bagId,
         itemId: itemId,
       });

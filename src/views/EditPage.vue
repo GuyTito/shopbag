@@ -77,15 +77,15 @@ export default {
     removeItem(itemId) {
       this.bag.items = this.bag.items.filter((item) => item.item_id !== itemId);
     },
-    updateBagItem() {
+    async updateBagItem() {
       const updatedBag = {
         bag_id: this.bag.bag_id,
         bag_name: this.bag.bag_name,
-        currency: this.bag.currency,
         comment: this.bag.comment,
-        items: this.bag.items,
+        currency: this.bag.currency,
+        items: this.bag.items
       };
-      this.$store.dispatch("updateBag", updatedBag);
+      await this.$store.dispatch("updateBag", updatedBag);
       this.$router.push(`/bag/${updatedBag.bag_id}`);
     },
   },

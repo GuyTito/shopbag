@@ -1,106 +1,72 @@
 import { createStore } from 'vuex'
 
+import idb from '@/api/idb.js';
+
 export default createStore({
   state: {
-    bags: [
-      {
-        bag_id: 1,
-        bag_name: 'Football kit',
-        currency: "₵",
-        items: [
-          {
-            item_id:1,
-            item_name: 'boots',
-            budget_price: 120.50,
-            market_price: 0.00,
-            purchased: false,
-            bought_price: 0.00,
-            quantity: 0
-
-          },
-          {
-            item_id:2,
-            item_name: 'football socks',
-            budget_price: 10.00,
-            market_price: 15.05,
-            purchased: true,
-            bought_price: 10.45,
-            quantity: 2
-
-          },
-        ],
-        comment: 'A pair of boots is one quantity. Same for socks and shin guard.'
-      },
-      {
-        bag_id: 2,
-        bag_name: 'general shopping',
-        currency: "₵",
-        items: [
-          {
-            item_id:1,
-            item_name: 'detergent',
-            budget_price: 10.00,
-            market_price: 15.00,
-            purchased: true,
-            bought_price: 10.00,
-            quantity: 2
-          },
-          {
-            item_id:2,
-            item_name: 'tomatoes',
-            budget_price: 30.00,
-            market_price: 25.00,
-            purchased: true,
-            bought_price: 25.00,
-            quantity: 1
-          },
-        ],
-        comment: '15 tomatoes is one  quantity which costs 25 cedis'
-      }
-    ]
+    bags: []
   },
   mutations: {
-    ADD_BAG(state, newBag){
-      let bagData = {
-        bag_id: newBag.bag_id,
-        bag_name: newBag.bag_name,
-        comment: newBag.comment,
-        items: newBag.items,
-        currency: newBag.currency
-      }
+    // ADD_BAG(state, newBag){
+    //   let bagData = {
+    //     bag_id: newBag.bag_id,
+    //     bag_name: newBag.bag_name,
+    //     comment: newBag.comment,
+    //     items: newBag.items,
+    //     currency: newBag.currency
+    //   }
 
-      state.bags.unshift(bagData)
-    },
-    REMOVE_ITEM(state, IDs){
-      state.bags.forEach((bag) => {
-        if (bag.bag_id == IDs.bagId) {
-          bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
-        }
-      })
-    },
-    REMOVE_BAG(state, bagId){
-      state.bags = state.bags.filter(bag => bag.bag_id !== bagId)
-    },
-    UPDATE_BAG(state, updatedBag){
-      state.bags.forEach(bag => {
-        if (bag.bag_id == updatedBag.bag_id) {
-          this.bag = updatedBag
-        }
-      })
-    }
+    //   state.bags.unshift(bagData)
+    // },
+    // REMOVE_ITEM(state, IDs){
+    //   state.bags.forEach((bag) => {
+    //     if (bag.bag_id == IDs.bagId) {
+    //       bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
+    //     }
+    //   })
+    // },
+    // REMOVE_BAG(state, bagId){
+    //   state.bags = state.bags.filter(bag => bag.bag_id !== bagId)
+    // },
+    // UPDATE_BAG(state, updatedBag){
+    //   state.bags.forEach(bag => {
+    //     if (bag.bag_id == updatedBag.bag_id) {
+    //       this.bag = updatedBag
+    //     }
+    //   })
+    // }
   },
   actions: {
-    addBag(context, newBag){
-      context.commit("ADD_BAG", newBag)
+    async getBags(context) {
+      context.state.bags = [];
+      let bags = await idb.getBags();
+      bags.forEach(c => {
+        context.state.bags.push(c);
+      });
     },
-    removeItem(context, IDs){
-      context.commit("REMOVE_ITEM", IDs)
+    // addBag(context, newBag){
+    //   context.commit("ADD_BAG", newBag)
+    // },
+    async addBag(bag) {
+      await idb.addBag(bag);
     },
-    removeBag(context, bagId){
-      context.commit("REMOVE_BAG", bagId)
+    // removeItem(context, IDs){
+    //   context.commit("REMOVE_ITEM", IDs)
+    // },
+    async removeItem(IDs){
+      await idb.removeItem(IDs)
     },
-    updateBag(context, updatedBag){
-      context.commit("UPDATE_BAG", updatedBag)
+    // removeBag(context, bagId){
+    //   context.commit("REMOVE_BAG", bagId)
+    // },
+    async removeBag(bag) {
+      await idb.removeBag(bag); 
+    },
+    // updateBag(context, updatedBag){
+    //   context.commit("UPDATE_BAG", updatedBag)
+    // },
+    async updateBag(bag) {
+      await idb.updateBag(bag);
     }
   },
   getters:{

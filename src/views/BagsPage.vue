@@ -47,8 +47,8 @@ export default {
     },
   },
   methods: {
-    removeBag(bagId) {
-      this.$store.dispatch("removeBag", bagId);
+    async removeBag(bagId) {
+      await this.$store.dispatch("removeBag", bagId);
     },
   },
 };
