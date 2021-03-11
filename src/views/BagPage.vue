@@ -38,21 +38,17 @@ import Item from "../components/Item";
 export default {
   name: "BagPage",
   components: { Item },
-  data(){
-    return {
-      bag: this.getbag()
-    }
+  computed: {
+    bag() {
+      // return this.$store.getters.getBag(this.$route.params.id);
+      let bags = this.$store.getters.getBags
+      return bags.filter(bag => bag.bag_id == this.$route.params.id)[0]
+    },
   },
   created() {
     this.$store.dispatch('getBags');
-    
   },
   methods: {
-    getbag() {
-      // return this.$store.getters.getBag(this.$route.params.id);
-      const bags = this.$store.getters.getBags
-      this.bag = bags.filter(bag => bag.bag_id == this.$route.params.id)[0]
-    },
     async removeItem(itemId) {
       await this.$store.dispatch("removeItem", {
         bagId: this.bag.bag_id,
