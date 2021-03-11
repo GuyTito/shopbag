@@ -34,28 +34,29 @@
 // import ShoppingItems from "../components/ShoppingItems";
 // import AddItem from "../components/AddItem";
 import Item from "../components/Item";
-import Subheading from "../components/Subheading.vue";
 
 export default {
   name: "BagPage",
-  components: { Item, Subheading },
-  data() {
-    return {
-      bagId: this.$route.params.id,
-    };
-  },
+  components: { Item },
   computed: {
     bag() {
-      return this.$store.getters.getBag(this.bagId);
+      return this.$store.getters.getBag(this.$route.params.id);
     },
+  },
+  created() {
+    this.$store.dispatch('getBags');
   },
   methods: {
     async removeItem(itemId) {
       await this.$store.dispatch("removeItem", {
-        bagId: this.bagId,
+        bagId: this.bag.bag_id,
         itemId: itemId,
       });
+      this.$store.dispatch('getBags');
     },
+    showbag(){
+      console.log('show... ' + this.bag);
+    }
   },
 };
 </script>

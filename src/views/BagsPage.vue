@@ -53,6 +53,7 @@ export default {
   methods: {
     async removeBag(bagId) {
       await this.$store.dispatch("removeBag", bagId);
+      this.$store.dispatch('getBags');
     },
   },
 };

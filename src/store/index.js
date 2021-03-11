@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 
 import idb from '@/api/idb.js';
+// import idbO from '@/api/idbO.js';
 
 export default createStore({
   state: {
@@ -8,16 +9,17 @@ export default createStore({
   },
   mutations: {
     // ADD_BAG(state, newBag){
-    //   let bagData = {
-    //     bag_id: newBag.bag_id,
-    //     bag_name: newBag.bag_name,
-    //     comment: newBag.comment,
-    //     items: newBag.items,
-    //     currency: newBag.currency
-    //   }
+      // let bagData = {
+      //   bag_id: newBag.bag_id,
+      //   bag_name: newBag.bag_name,
+      //   comment: newBag.comment,
+      //   items: newBag.items,
+      //   currency: newBag.currency
+      // }
 
-    //   state.bags.unshift(bagData)
-    // },
+      // state.bags.unshift(newBag)
+      // state.bags = newBag
+    },
     // REMOVE_ITEM(state, IDs){
     //   state.bags.forEach((bag) => {
     //     if (bag.bag_id == IDs.bagId) {
@@ -35,15 +37,16 @@ export default createStore({
     //     }
     //   })
     // }
-  },
+  // },
   actions: {
     async getBags(context) {
-      context.state.bags = [];
-      let bags = await idb.getBags();
-      console.log('getting...' + bags);
-      bags.forEach(c => {
-        context.state.bags.push(c);
-      });
+      context.state.bags = await idb.getBags()
+      // context.state.bags = [];
+      // let bags = await idb.getBags();
+      // console.log('getting...' + typeof bags);
+      // bags.forEach(c => {
+      //   context.state.bags.push(c);
+      // });
     },
     // addBag(context, newBag){
     //   context.commit("ADD_BAG", newBag)
@@ -61,8 +64,8 @@ export default createStore({
     // removeBag(context, bagId){
     //   context.commit("REMOVE_BAG", bagId)
     // },
-    async removeBag(context, bag) {
-      await idb.removeBag(bag); 
+    async removeBag(context, bagId) {
+      await idb.removeBag(bagId); 
     },
     // updateBag(context, updatedBag){
     //   context.commit("UPDATE_BAG", updatedBag)

@@ -10,14 +10,13 @@ export default {
   },
 
   async updateBag(bag) {
-    await db.collection("bags").doc({id: bag.bag_id}).set(bag);
+    await db.collection("bags").doc({bag_id: bag.bag_id}).update(JSON.parse(JSON.stringify(bag)));
     console.log("updated");
   },
 
   async addBag(bag) {
     try {
-      console.log('adding... ' + JSON.stringify(bag));
-      await db.collection("bags").add(bag);
+      await db.collection("bags").add(JSON.parse(JSON.stringify(bag)));
       console.log("added");
     } catch (e) {
       console.log(e)
@@ -25,13 +24,15 @@ export default {
     
   },
 
-  async removeBag(bag) {
-    await db.collection("bags").doc({id: bag.bag_id}).delete();
+  async removeBag(bagId) {
+    await db.collection("bags").doc({bag_id: bagId}).delete();
     console.log("deleted");
   },
 
   async removeItem(IDs){
-    await db.collection('bags').doc({ id: IDs.bagId }).get().then(bag => {
+    console.log('ids ' + JSON.stringify(IDs));
+    await db.collection('bags').doc({bag_id: IDs.bagId}).get().then(bag => {
+        console.log('remove item... ' + JSON.stringify(bag) );
         bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
         this.updateBag(bag)
         console.log('removed item')
