@@ -55,10 +55,17 @@ import EditItem from "../components/EditItem";
 export default {
   name: "EditPage",
   components: { EditItem },
-  data() {
-    return {
-      bag: this.$store.getters.getBag(this.$route.params.id),
-    };
+  // data() {
+  //   return {
+  //     bag: this.$store.getters.getBag(this.$route.params.id),
+  //   };
+  // },
+  computed: {
+    bag() {
+      // return this.$store.getters.getBag(this.$route.params.id);
+      let bags = this.$store.getters.getBags
+      return bags.filter(bag => bag.bag_id == this.$route.params.id)[0]
+    },
   },
   created() {
     this.$store.dispatch('getBags');
@@ -81,15 +88,8 @@ export default {
       this.bag.items = this.bag.items.filter((item) => item.item_id !== itemId);
     },
     async updateBagItem() {
-      // const updatedBag = {
-      //   bag_id: this.bag.bag_id,
-      //   bag_name: this.bag.bag_name,
-      //   comment: this.bag.comment,
-      //   currency: this.bag.currency,
-      //   items: this.bag.items
-      // };
       await this.$store.dispatch("updateBag", this.bag);
-      this.$router.push(`/bag/${this.bag.bag_id}`);
+      this.$router.replace(`/bag/${this.bag.bag_id}`);
     },
   },
 };
