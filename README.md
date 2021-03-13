@@ -1,11 +1,8 @@
 # shopping_tracker
 
-A simple app to track grocery items and prices as you're shopping.
-This is the front-end app.
+A simple grocery list app to track items and prices as you're shopping.
 
 
-## Suggestions
-Suggestions text file contains ideas which will be added to the project as time goes on. When an idea is implemented and added to the project, that statement(idea) is prefixed with "[DONE]".
 
 
 ### NB:
