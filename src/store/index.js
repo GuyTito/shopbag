@@ -71,13 +71,8 @@ export default createStore({
     getBags(state){
       return state.bags
     },
-    // getBag: (state) => (bagId) => {
-    //   return state.bags.filter(bag => bag.bag_id == bagId)[0]
-    // },
-    getBag(state, bagId) {
+    getBag: (state) => (bagId) => {
       return state.bags.filter(bag => bag.bag_id == bagId)[0]
-    }
-  },
-  // modules: {
-  // }
+    },
+  }
 })

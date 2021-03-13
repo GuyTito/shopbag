@@ -30,9 +30,7 @@ export default {
   },
 
   async removeItem(IDs){
-    console.log('ids ' + JSON.stringify(IDs));
     await db.collection('bags').doc({bag_id: IDs.bagId}).get().then(bag => {
-        console.log('remove item... ' + JSON.stringify(bag) );
         bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
         this.updateBag(bag)
         console.log('removed item')

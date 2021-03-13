@@ -40,9 +40,7 @@ export default {
   components: { Item },
   computed: {
     bag() {
-      // return this.$store.getters.getBag(this.$route.params.id);
-      let bags = this.$store.getters.getBags
-      return bags.filter(bag => bag.bag_id == this.$route.params.id)[0]
+      return this.$store.getters.getBag(this.$route.params.id);
     },
   },
   created() {
