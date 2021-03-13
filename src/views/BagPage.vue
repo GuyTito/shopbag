@@ -34,11 +34,10 @@
 // import ShoppingItems from "../components/ShoppingItems";
 // import AddItem from "../components/AddItem";
 import Item from "../components/Item";
-import Subheading from "../components/Subheading.vue";
 
 export default {
   name: "BagPage",
-  components: { Item, Subheading },
+  components: { Item },
   data() {
     return {
       bagId: this.$route.params.id,
