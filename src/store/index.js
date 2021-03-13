@@ -41,6 +41,7 @@ export default createStore({
   actions: {
     async getBags(context) {
       context.state.bags = await idb.getBags()
+      console.log('getBags ' + JSON.stringify(context.state.bags));
     },
     // addBag(context, newBag){
     //   context.commit("ADD_BAG", newBag)
@@ -72,7 +73,8 @@ export default createStore({
       return state.bags
     },
     getBag: (state) => (bagId) => {
-      return state.bags.filter(bag => bag.bag_id == bagId)[0]
+      // return state.bags.filter(bag => bag.bag_id == bagId)[0]
+      return state.bags.find(bag => bag.bag_id == bagId)
     },
   }
 })

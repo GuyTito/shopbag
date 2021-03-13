@@ -9,9 +9,9 @@ export default {
     return await db.collection("bags").get();
   },
 
-  async updateBag(bag) {
+  async updateBag(bag, msg='updated') {
     await db.collection("bags").doc({bag_id: bag.bag_id}).update(JSON.parse(JSON.stringify(bag)));
-    console.log("updated");
+    console.log(msg);
   },
 
   async addBag(bag) {
@@ -32,8 +32,7 @@ export default {
   async removeItem(IDs){
     await db.collection('bags').doc({bag_id: IDs.bagId}).get().then(bag => {
         bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
-        this.updateBag(bag)
-        console.log('removed item')
+        this.updateBag(bag, 'removed item')
     })
   },
   
