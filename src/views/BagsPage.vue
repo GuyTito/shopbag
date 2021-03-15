@@ -39,7 +39,7 @@
 import BagList from "../components/BagList";
 
 export default {
-  name: "HomePage",
+  name: "BagsPage",
   components: { BagList },
   computed: {
     bags() {
