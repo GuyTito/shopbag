@@ -31,6 +31,8 @@
 </template>
 
 <script>
+// import ShoppingItems from "../components/ShoppingItems";
+// import AddItem from "../components/AddItem";
 import Item from "../components/Item";
 
 export default {
