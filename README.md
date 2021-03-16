@@ -1,6 +1,6 @@
 # shopping_tracker(ShopBag)
 
-A simple grocery list app to track items and prices as you shop. Items are stored locally in the indexedDb of the browser. [Start using](shopbag.netlify.app)
+A simple grocery list app to track items and prices as you shop. Items are stored locally in the indexedDb of the browser. [Start using](https://shopbag.netlify.app)
 
 
 
