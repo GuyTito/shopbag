@@ -1,3 +1,5 @@
+//vanilla indexedDb
+
 const DB_NAME = 'shopbagDb';
 const DB_VERSION = 1;
 let DB;
