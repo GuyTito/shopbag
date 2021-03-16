@@ -9,7 +9,7 @@ shopbag_ui.pptx
 
 .DS_Store
 node_modules
-/dist
+#/dist
 
 
 # local env files
