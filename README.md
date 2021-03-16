@@ -1,6 +1,6 @@
 # shopping_tracker(ShopBag)
 
-A simple grocery list app to track items and prices as you're shopping.
+A simple grocery list app to track items and prices as you shop.
 
 
 
