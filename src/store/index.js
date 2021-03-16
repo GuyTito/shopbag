@@ -41,7 +41,6 @@ export default createStore({
   actions: {
     async getBags(context) {
       context.state.bags = await idb.getBags()
-      console.log('getBags ' + JSON.stringify(context.state.bags));
     },
     // addBag(context, newBag){
     //   context.commit("ADD_BAG", newBag)
