@@ -105,7 +105,7 @@
             <span class="display-6">No boundaries at all</span>
             <p class="lead">
               ShopBag is a web app which is accessible on every device. And can
-              be used offline because its also a progressive web app(PWA).
+              be used offline because its also a progressive web app(PWA). Your items are locally stored on your device.
             </p>
           </div>
         </div>

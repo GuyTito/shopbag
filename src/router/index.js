@@ -14,11 +14,8 @@ const routes = [
   },
   {
     path: '/add',
+    name: 'add',
     component: () => import('@/views/AddBagPage.vue')
-  },
-  {
-    path: '/search',
-    component: () => import('@/views/SearchPage.vue')
   },
   {
     path: '/edit/:id',

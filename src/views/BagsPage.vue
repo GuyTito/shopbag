@@ -39,16 +39,21 @@
 import BagList from "../components/BagList";
 
 export default {
-  name: "HomePage",
+  name: "BagsPage",
   components: { BagList },
   computed: {
     bags() {
       return this.$store.getters.getBags;
+      // return this.$store.state.bags;
     },
   },
+  created() {
+    this.$store.dispatch('getBags');
+  },
   methods: {
-    removeBag(bagId) {
-      this.$store.dispatch("removeBag", bagId);
+    async removeBag(bagId) {
+      await this.$store.dispatch("removeBag", bagId);
+      this.$store.dispatch('getBags');
     },
   },
 };

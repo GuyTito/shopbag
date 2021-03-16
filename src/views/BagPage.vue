@@ -1,6 +1,6 @@
 <template>
   <!-- list of items -->
-  <div class="container-fluid mt-4 page-head">
+  <div class="container-fluid mt-4 page-head" v-if="bag">
     <div class="d-flex justify-content-between mb-2">
       <h2 class="mx-2">{{ bag.bag_name }}</h2>
 
@@ -31,30 +31,26 @@
 </template>
 
 <script>
-// import ShoppingItems from "../components/ShoppingItems";
-// import AddItem from "../components/AddItem";
 import Item from "../components/Item";
 
 export default {
   name: "BagPage",
   components: { Item },
-  data() {
-    return {
-      bagId: this.$route.params.id,
-    };
-  },
   computed: {
     bag() {
-      return this.$store.getters.getBag(this.bagId);
+      return this.$store.getters.getBag(this.$route.params.id);
     },
   },
+  created() {
+    this.$store.dispatch('getBags');
+  },
   methods: {
-    removeItem(itemId) {
-      this.$store.dispatch("removeItem", {
-        bagId: this.bagId,
+    async removeItem(itemId) {
+      await this.$store.dispatch("removeItem", {
+        bagId: this.bag.bag_id,
         itemId: itemId,
       });
-    },
+    }
   },
 };
 </script>
