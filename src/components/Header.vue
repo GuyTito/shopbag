@@ -6,7 +6,7 @@
       </router-link>
 
       <div class="navbar-nav">
-        <router-link to="/bags" class="nav-link active mt-2 mx-4" aria-current="page">
+        <router-link to="/bags" class="nav-link active mt-2" aria-current="page">
           <img
             src="@/assets/icons/shopbags.svg"
             alt="bags"
@@ -15,7 +15,7 @@
           />
         </router-link>
 
-        <div class="nav-link mt-2">
+        <!-- <div class="nav-link mt-2">
           <img
             id="dark"
             @click="darkMode"
@@ -24,7 +24,7 @@
             height="20"
             width="20"
           />
-        </div>
+        </div> -->
       </div>
     </div>
   </nav>
