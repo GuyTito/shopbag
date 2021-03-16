@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid my-4 page-head">
     <h4>Create bag and items to buy</h4>
-    <form  class="v-center mt-3">
+    <form @submit.prevent="addBagItem" class="v-center mt-3">
       <input
         type="text"
         name="bag_name"
@@ -38,7 +38,7 @@
       <DisplayItems :items="bag.items" :currency="bag.currency" @remove-item="removeItem" />
 
       <div class="d-grid">
-        <input type="button" @click="addBagItem" value="Create Bag" class="btn btn-primary" />
+        <input type="submit"  value="Create Bag" class="btn btn-primary" />
       </div>
     </form>
   </div>
@@ -68,7 +68,6 @@ export default {
     },
     async addBagItem() {
       this.bag.bag_id = new Date().toISOString()
-      // console.log('addbagpage... ' + JSON.stringify(this.bag))
       try {
         await this.$store.dispatch("addBag", this.bag)
         this.$router.push('/bags')

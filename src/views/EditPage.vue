@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid my-4 page-head">
     <h4>Update bag and items</h4>
-    <form class="v-center mt-3">
+    <form @submit.prevent="updateBagItem" class="v-center mt-3">
       <input
         class="form-control mb-2"
         type="text"
@@ -43,7 +43,7 @@
       />
 
       <div class="d-grid">
-        <input type="button" @click="updateBagItem" value="Update Bag" class="btn btn-primary" />
+        <input type="submit"  value="Update Bag" class="btn btn-primary" />
       </div>    
     </form>
   </div>
@@ -89,7 +89,7 @@ export default {
     },
     async updateBagItem() {
       await this.$store.dispatch("updateBag", this.bag);
-      this.$router.replace(`/bag/${this.bag.bag_id}`);
+      this.$router.push(`/bag/${this.bag.bag_id}`);
     },
   },
 };

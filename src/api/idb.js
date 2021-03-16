@@ -1,7 +1,7 @@
 import Localbase from "localbase";
 
 let db = new Localbase("shopbagDb");
-db.config.debug = true;
+db.config.debug = false;
 
 export default {
 

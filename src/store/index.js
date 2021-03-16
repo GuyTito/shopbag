@@ -20,13 +20,13 @@ export default createStore({
       // state.bags.unshift(newBag)
       // state.bags = newBag
     // },
-    // REMOVE_ITEM(state, IDs){
-    //   state.bags.forEach((bag) => {
-    //     if (bag.bag_id == IDs.bagId) {
-    //       bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
-    //     }
-    //   })
-    // },
+    REMOVE_ITEM(state, IDs){
+      state.bags.forEach((bag) => {
+        if (bag.bag_id == IDs.bagId) {
+          bag.items = bag.items.filter(item => item.item_id !== IDs.itemId)
+        }
+      })
+    },
     // REMOVE_BAG(state, bagId){
     //   state.bags = state.bags.filter(bag => bag.bag_id !== bagId)
     // },
@@ -53,6 +53,7 @@ export default createStore({
     //   context.commit("REMOVE_ITEM", IDs)
     // },
     async removeItem(context, IDs){
+      context.commit("REMOVE_ITEM", IDs)
       await idb.removeItem(IDs)
     },
     // removeBag(context, bagId){

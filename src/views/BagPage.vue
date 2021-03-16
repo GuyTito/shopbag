@@ -1,6 +1,6 @@
 <template>
   <!-- list of items -->
-  <div class="container-fluid mt-4 page-head">
+  <div class="container-fluid mt-4 page-head" v-if="bag">
     <div class="d-flex justify-content-between mb-2">
       <h2 class="mx-2">{{ bag.bag_name }}</h2>
 
@@ -50,7 +50,6 @@ export default {
         bagId: this.bag.bag_id,
         itemId: itemId,
       });
-      this.$store.dispatch('getBags');
     }
   },
 };
