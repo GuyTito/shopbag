@@ -19,10 +19,7 @@ export default {
     },
     checkThemeOnLoad() {
       let isDark = JSON.parse(localStorage.getItem("dark"));
-      let curTime = parseFloat(
-        new Date().getHours() + "." + new Date().getMinutes()
-      );
-      if (isDark || (curTime <= 7.45 && curTime >= 18)) {
+      if (isDark) {
         document.body.classList.add("dark-mode");
       } else {
         document.body.classList.remove("dark-mode");
@@ -36,11 +33,6 @@ export default {
 </script>
 
 <style>
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  } */
 
 body.dark-mode,
 body.dark-mode input[type="text"],
@@ -48,11 +40,4 @@ body.dark-mode .todo-item {
   color: #eee;
   background: #121212;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  body {
-    color: #eee;
-    background: #121212;
-  }
-} */
 </style>
