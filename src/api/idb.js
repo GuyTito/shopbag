@@ -1,3 +1,5 @@
+//indexedDb using library
+
 import Localbase from "localbase";
 
 let db = new Localbase("shopbagDb");
