@@ -1,6 +1,7 @@
 <template>
   <div>
     <form @submit.prevent="updateItems">
+      <label for="item_name" class="form-label">Shopping item</label>
       <input
         class="form-control mb-2"
         type="text"
@@ -9,6 +10,8 @@
         required
         placeholder="shopping item"
       />
+
+      <label for="budget_price" class="form-label">Your budget price</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -18,6 +21,8 @@
         name="budget_price"
         placeholder="budget price"
       />
+
+      <label for="market_price" class="form-label">Market price</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -27,6 +32,8 @@
         name="market_price"
         placeholder="market price?"
       />
+
+      <label for="quantity" class="form-label">Quantity</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -37,6 +44,8 @@
         name="quantity"
         placeholder="quantity"
       />
+
+      <label for="bought_price" class="form-label">Price you bought</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -44,7 +53,7 @@
         step="0.01"
         v-model="bought_price"
         name="bought_price"
-        placeholder="price you  bought"
+        placeholder="price you bought"
       />
 
       <div class="d-flex justify-content-center mb-2">
@@ -68,8 +77,8 @@
 
     <div v-for="item in items" :key="item.item_id">
     <div class="d-flex justify-content-between">
-      <div class="ms-2">
-        <h6 @click="populateIItemFields(item)">{{ item.item_name }}</h6>
+      <div class="ms-2" @click="populateIItemFields(item)">
+        <h6 >{{ item.item_name }}</h6>
         <div>
           <span>{{currency}} {{ item.budget_price }} </span>
           <span class="ms-4">{{currency}} {{ item.market_price }} </span>

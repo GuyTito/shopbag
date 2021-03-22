@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/about.1a85aea5.css"
   },
   {
-    "revision": "495530a8e24c38850d27",
+    "revision": "7bb16164e9fc4ae7380a",
     "url": "/css/app.f028e1b2.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/chunk-05c36658.b2ffbb2b.css"
   },
   {
-    "revision": "8c4855925ebbd5e09ff6",
-    "url": "/css/chunk-720ae2fe.3af25c54.css"
+    "revision": "798e3ca56674168f1576",
+    "url": "/css/chunk-726851ee.fabe40aa.css"
   },
   {
     "revision": "c2c66c37f607bed13cfb",
@@ -56,7 +56,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/stock_shopbag_prices.22a28c9b.png"
   },
   {
-    "revision": "dfc62bd0d2cbc07eeadc889a44ff3ba5",
+    "revision": "2af635503a02d19eb840aba290edaefb",
     "url": "/index.html"
   },
   {
@@ -64,8 +64,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.e3683ddd.js"
   },
   {
-    "revision": "495530a8e24c38850d27",
-    "url": "/js/app.f5cbd82b.js"
+    "revision": "7bb16164e9fc4ae7380a",
+    "url": "/js/app.867e35fa.js"
   },
   {
     "revision": "42939d160add470af504",
@@ -76,8 +76,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-1a80fee3.8db63c6c.js"
   },
   {
-    "revision": "8c4855925ebbd5e09ff6",
-    "url": "/js/chunk-720ae2fe.e7391b0e.js"
+    "revision": "798e3ca56674168f1576",
+    "url": "/js/chunk-726851ee.0acc107f.js"
   },
   {
     "revision": "c2c66c37f607bed13cfb",
@@ -88,11 +88,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/manifest.json"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "/robots.txt"
-  },
-  {
-    "revision": "b7379e7962a22945eec2fd48a417ff0a",
-    "url": "/shopbag_logo.png"
   }
 ]);
