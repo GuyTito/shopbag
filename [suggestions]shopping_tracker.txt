@@ -8,4 +8,6 @@ suggestions for shopping_tracker
 - host on netlify
 - make app pwa which can work without internet
 - add feature to select currency symbol
+- use checkbox to toggle delete icon on bagpage
+- show confirmation modal when delete icon is clicked
 - 
