@@ -39,16 +39,6 @@
         {{ bag.comment }}
       </div>
     </div>
-
-    <router-link class="fab shadow bg-light" :to="`/edit/${bag.bag_id}`">
-      <img
-        src="@/assets/icons/pencil.svg"
-        alt="edit"
-        height="25"
-        width="25"
-        class="mt-3"
-      />
-    </router-link>
   </div>
 </template>
 
