@@ -24,11 +24,6 @@
       </div>
 
       <div class="mt-4 mb-4">
-        <h6>Notes</h6>
-        {{ bag.comment }}
-      </div>
-
-      <div>
         <div><strong>Total Budget: </strong>{{ bag.currency }}{{total_budget}}</div>
         <div><strong>Total Expense: </strong>{{ bag.currency }}{{total_expense}}</div>
         <div>
@@ -38,7 +33,22 @@
           </span>
         </div>
       </div>
+
+      <div>
+        <h6>Notes</h6>
+        {{ bag.comment }}
+      </div>
     </div>
+
+    <router-link class="fab shadow bg-light" :to="`/edit/${bag.bag_id}`">
+      <img
+        src="@/assets/icons/pencil.svg"
+        alt="edit"
+        height="25"
+        width="25"
+        class="mt-3"
+      />
+    </router-link>
   </div>
 </template>
 

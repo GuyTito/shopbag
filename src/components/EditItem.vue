@@ -1,6 +1,43 @@
 <template>
-  <div id="edit-item">
-    <h5>Update items</h5>
+  <div>
+    <h5>Items</h5>
+    <div class="mb-2">
+      <small><em>*Tap on an item name to edit</em></small>
+    </div>
+
+    <div v-for="item in prop_items" :key="item.item_id">
+      <div class="d-flex justify-content-between">
+        <div class="ms-2">
+          <h6>
+            <a  @click="populateIItemFields(item)" class="text-dark text-decoration-none" href="#edit-item">
+              {{ item.item_name }}
+            </a>
+          </h6>
+          <div>
+            <span>{{currency}} {{ item.budget_price }} </span>
+            <span class="ms-4">{{currency}} {{ item.market_price }} </span>
+            <span class="ms-4">{{ item.quantity }}</span>
+            <span class="ms-4">{{currency}} {{ item.bought_price }} </span>
+          </div>
+        </div>
+
+        <div class="mt-2">
+          <div @click="$emit('remove-item', item.item_id)" class="bg-secondary rounded-circle p-2">
+            <img
+              src="@/assets/icons/bin.svg"
+              alt="trash"
+              height="25"
+              width="25"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <hr class="bg-primary" />
+
+    </div>
+
+    <h5 class="mt-4"  id="edit-item">Update</h5>
     <form @submit.prevent="updateItems">
       <label for="item_name" class="form-label">Shopping item</label>
       <input
@@ -57,7 +94,7 @@
         placeholder="price you bought"
       />
 
-      <div class="d-flex justify-content-center mb-2">
+      <div class="d-flex justify-content-center mb-4">
         <input
           class="btn btn-primary mb-2"
           type="submit"
@@ -65,52 +102,6 @@
         />
       </div>
     </form>
-
-    <!-- display item after adding -->
-    <!-- <div v-for="item in items" :key="item.item_id">
-      <span @click="populateIItemFields(item)">{{ item.item_name }} </span>
-      <span>{{ item.budget_price }} </span>
-      <span>{{ item.market_price }} </span>
-      <span>{{ item.quantity }}</span>
-      <span>{{ item.bought_price }} </span>
-      <button @click="$emit('remove-item', item.item_id)" class="del">x</button>
-    </div> -->
-
-    <div class="mb-2">
-      <small><em>*Tap on an item name to edit</em></small>
-    </div>
-
-    <div v-for="item in prop_items" :key="item.item_id">
-      <div class="d-flex justify-content-between">
-        <div class="ms-2">
-          <h6>
-            <a  @click="populateIItemFields(item)" class="text-dark text-decoration-none" href="#edit-item">
-              {{ item.item_name }}
-            </a>
-          </h6>
-          <div>
-            <span>{{currency}} {{ item.budget_price }} </span>
-            <span class="ms-4">{{currency}} {{ item.market_price }} </span>
-            <span class="ms-4">{{ item.quantity }}</span>
-            <span class="ms-4">{{currency}} {{ item.bought_price }} </span>
-          </div>
-        </div>
-
-        <div class="mt-2">
-          <div @click="$emit('remove-item', item.item_id)" class="bg-secondary rounded-circle p-2">
-            <img
-              src="@/assets/icons/bin.svg"
-              alt="trash"
-              height="25"
-              width="25"
-            />
-          </div>
-        </div>
-      </div>
-      
-      <hr class="bg-primary" />
-
-    </div>
   </div>
 </template>
 
