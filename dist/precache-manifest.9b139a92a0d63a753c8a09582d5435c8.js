@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/about.1a85aea5.css"
   },
   {
-    "revision": "37029ee8048d2227b0c8",
+    "revision": "b83dbca7d47fc8ef13cf",
     "url": "/css/app.f028e1b2.css"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/chunk-2e83634e.677da543.css"
   },
   {
-    "revision": "74e6a3d026bbb8d18cba",
+    "revision": "284a9e2b5f2e3710f243",
     "url": "/css/chunk-8b2e5094.072e7986.css"
   },
   {
@@ -56,7 +56,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/stock_shopbag_prices.22a28c9b.png"
   },
   {
-    "revision": "c563e9477d33f2191fc0783e98147905",
+    "revision": "409441d3d94c5ae801362e1d6129f67b",
     "url": "/index.html"
   },
   {
@@ -64,8 +64,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.11cef708.js"
   },
   {
-    "revision": "37029ee8048d2227b0c8",
-    "url": "/js/app.0db9ec08.js"
+    "revision": "b83dbca7d47fc8ef13cf",
+    "url": "/js/app.b6a161e5.js"
   },
   {
     "revision": "00e08c63a12404483101",
@@ -80,8 +80,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-439b4bb7.aca8810f.js"
   },
   {
-    "revision": "74e6a3d026bbb8d18cba",
-    "url": "/js/chunk-8b2e5094.3aabe11a.js"
+    "revision": "284a9e2b5f2e3710f243",
+    "url": "/js/chunk-8b2e5094.03b90898.js"
   },
   {
     "revision": "33583abc0888be47f144",
