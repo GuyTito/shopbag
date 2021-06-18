@@ -4,12 +4,7 @@
     <div class="d-flex justify-content-between">
       <div class="ms-2">
         <div>{{ item.item_name }}</div>
-        <div>
-          <span>{{currency}} {{ item.budget_price }} </span>
-          <span class="ms-4">{{currency}} {{ item.market_price }} </span>
-          <span class="ms-4">{{ item.quantity }}</span>
-          <span class="ms-4">{{currency}} {{ item.bought_price }} </span>
-        </div>
+        <Item />
       </div>
 
       <div class="mt-2">
@@ -30,7 +25,10 @@
 </template>
 
 <script>
+import Item from "../components/Item";
+
 export default {
+  components: { Item },
   props: ["items", "currency"],
   emits: ["remove-item"],
 };

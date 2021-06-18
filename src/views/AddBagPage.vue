@@ -34,6 +34,7 @@
         <label class="me-3" for="naira">₦</label>
       </div>
 
+      <h5 class="mt-4">Add Item</h5>
       <AddItem @add-item="addItem" />
       <DisplayItems :items="bag.items" :currency="bag.currency" @remove-item="removeItem" />
 

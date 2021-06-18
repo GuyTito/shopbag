@@ -13,12 +13,7 @@
               {{ item.item_name }}
             </a>
           </h6>
-          <div>
-            <span>{{currency}} {{ item.budget_price }} </span>
-            <span class="ms-4">{{currency}} {{ item.market_price }} </span>
-            <span class="ms-4">{{ item.quantity }}</span>
-            <span class="ms-4">{{currency}} {{ item.bought_price }} </span>
-          </div>
+          <Item />
         </div>
 
         <div class="mt-2">
@@ -37,7 +32,7 @@
 
     </div>
 
-    <h5 class="mt-4"  id="edit-item">Update</h5>
+    <h5 class="mt-4" id="edit-item">Update</h5>
     <form @submit.prevent="updateItems">
       <label for="item_name" class="form-label">Shopping item</label>
       <input
@@ -49,7 +44,7 @@
         placeholder="shopping item"
       />
 
-      <label for="budget_price" class="form-label">Your budget price</label>
+      <label for="budget_price" class="form-label">Your budget price (b)</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -60,7 +55,7 @@
         placeholder="budget price"
       />
 
-      <label for="market_price" class="form-label">Market price</label>
+      <label for="market_price" class="form-label">Market price (m)</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -71,7 +66,7 @@
         placeholder="market price?"
       />
 
-      <label for="quantity" class="form-label">Quantity</label>
+      <label for="quantity" class="form-label">Quantity (q)</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -83,7 +78,7 @@
         placeholder="quantity"
       />
 
-      <label for="bought_price" class="form-label">Price you bought</label>
+      <label for="bought_price" class="form-label">Price you bought (ex)</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -106,7 +101,10 @@
 </template>
 
 <script>
+import Item from "../components/Item";
+
 export default {
+  components: { Item },
   name: "EdiItem",
   props: ["prop_items", "currency"],
   data() {

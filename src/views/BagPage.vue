@@ -19,13 +19,13 @@
 
     <div class="v-center p-2">
       <div v-for="item in bag.items" :key="item.item_id">
-        <Item :item="item" :currency="bag.currency" @del-item="removeItem" />
+        <ItemList :item="item" :currency="bag.currency" @del-item="removeItem" />
         <hr class="bg-primary" />
       </div>
 
       <div class="mt-4 mb-4">
         <div><strong>Total Budget: </strong>{{ bag.currency }}{{total_budget}}</div>
-        <div><strong>Total Expense: </strong>{{ bag.currency }}{{total_expense}}</div>
+        <div><strong>Total Expenses: </strong>{{ bag.currency }}{{total_expense}}</div>
         <div>
           <strong>Balance: </strong> 
           <span :class="[balance < 0 ? 'text-danger' : '']"> 
