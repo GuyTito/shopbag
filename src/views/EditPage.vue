@@ -35,7 +35,7 @@
       </div>
 
       <EditItem
-        :items="bag.items"
+        :prop_items="bag.items"
         :currency="bag.currency"
         @add-item="addItem"
         @update-items="updateItems"
