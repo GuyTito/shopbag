@@ -77,7 +77,7 @@
     </div> -->
 
     <div class="mb-2">
-      <small><em>*Tap on item name to edit</em></small>
+      <small><em>*Tap on an item name to edit</em></small>
     </div>
 
     <div v-for="item in items" :key="item.item_id">

@@ -89,7 +89,7 @@ export default {
     },
     async updateBagItem() {
       await this.$store.dispatch("updateBag", this.bag);
-      this.$router.push(`/bag/${this.bag.bag_id}`);
+      this.$router.replace(`/bag/${this.bag.bag_id}`);
     },
   },
 };
