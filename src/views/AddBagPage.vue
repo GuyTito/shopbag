@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid my-4 page-head">
     <h4>Create bag and items to buy</h4>
-    <form @submit.prevent="addBagItem" class="v-center mt-3">
+    <form @submit.prevent="addBag" class="v-center mt-3">
       <input
         type="text"
         name="bag_name"
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import idb from '@/api/idb.js';
 import AddItem from "../components/AddItem";
 import DisplayItems from "../components/DisplayItems";
 
@@ -66,15 +67,10 @@ export default {
     addItem(newItem) {
       this.bag.items.push(newItem);
     },
-    async addBagItem() {
+    async addBag() {
       this.bag.bag_id = new Date().toISOString()
-      try {
-        await this.$store.dispatch("addBag", this.bag)
-        this.$router.push('/bags')
-      } catch (error) {
-        console.log(error)
-      }
-      
+      await idb.addBag(this.bag);
+      this.$router.push('/bags')
     },
     removeItem(itemId) {
       this.bag.items = this.bag.items.filter((item) => item.item_id !== itemId);

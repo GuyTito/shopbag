@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import idb from '@/api/idb.js';
 import Item from "../components/Item";
 
 export default {
@@ -52,14 +53,22 @@ export default {
     return{
       total_budget: 0,
       total_expense: 0,
-      balance: 0
+      balance: 0,
+      bag: {},
     }
   },
-  computed: {
-    bag() {
-      let bag = this.$store.getters.getBag(this.$route.params.id)
-      let items = bag.items
-      
+  methods: {
+    async removeItem(itemId) {
+      this.bag.items = this.bag.items.filter(item => item.item_id !== itemId)
+      this.calcExpenses(this.bag.items)
+
+      let IDs = {
+        bagId: this.bag.bag_id,
+        itemId: itemId,
+      };
+      await idb.removeItem(IDs)
+    },
+    calcExpenses(items){
       let total_budget = items.reduce(function(sum, item) { 
         return sum + (parseInt(item.budget_price) * parseInt(item.quantity));
       }, 0)
@@ -71,21 +80,16 @@ export default {
       this.total_expense = total_expense
 
       this.balance = total_budget - total_expense
-
-      return bag;
-    },
+    }
   },
-  created() {
-    this.$store.dispatch('getBags');
-  },
-  methods: {
-    async removeItem(itemId) {
-      await this.$store.dispatch("removeItem", {
-        bagId: this.bag.bag_id,
-        itemId: itemId,
-      });
-    },
-  },
+  mounted() {
+    idb.getBag(this.$route.params.id)
+      .then((response) => {
+        console.log(response);
+        this.bag = response;
+        this.calcExpenses(response.items)
+      })
+  }
 };
 </script>
 

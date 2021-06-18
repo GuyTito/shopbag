@@ -50,25 +50,16 @@
 </template>
 
 <script>
+import idb from '@/api/idb.js';
 import EditItem from "../components/EditItem";
 
 export default {
   name: "EditPage",
   components: { EditItem },
-  // data() {
-  //   return {
-  //     bag: this.$store.getters.getBag(this.$route.params.id),
-  //   };
-  // },
-  computed: {
-    bag() {
-      // return this.$store.getters.getBag(this.$route.params.id);
-      let bags = this.$store.getters.getBags
-      return bags.filter(bag => bag.bag_id == this.$route.params.id)[0]
-    },
-  },
-  created() {
-    this.$store.dispatch('getBags');
+  data() {
+    return {
+      bag: {},
+    };
   },
   methods: {
     updateItems(itemData) {
@@ -88,10 +79,17 @@ export default {
       this.bag.items = this.bag.items.filter((item) => item.item_id !== itemId);
     },
     async updateBagItem() {
-      await this.$store.dispatch("updateBag", this.bag);
+      await idb.updateBag(this.bag);
       this.$router.replace(`/bag/${this.bag.bag_id}`);
     },
   },
+  mounted() {
+    idb.getBag(this.$route.params.id)
+      .then((response) => {
+        console.log(response);
+        this.bag = response;
+      })
+  }
 };
 </script>
 

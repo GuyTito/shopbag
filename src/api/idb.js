@@ -11,6 +11,10 @@ export default {
     return await db.collection("bags").get();
   },
 
+  async getBag(bagId) {
+    return await db.collection("bags").doc({bag_id: bagId}).get();
+  },
+
   async updateBag(bag, msg='updated') {
     await db.collection("bags").doc({bag_id: bag.bag_id}).update(JSON.parse(JSON.stringify(bag)));
     console.log(msg);
