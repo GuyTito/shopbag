@@ -24,13 +24,8 @@
       </div>
 
       <div class="mt-4 mb-4">
-        <h6>Notes</h6>
-        {{ bag.comment }}
-      </div>
-
-      <div>
         <div><strong>Total Budget: </strong>{{ bag.currency }}{{total_budget}}</div>
-        <div><strong>Total Expense: </strong>{{ bag.currency }}{{total_expense}}</div>
+        <div><strong>Total Expenses: </strong>{{ bag.currency }}{{total_expense}}</div>
         <div>
           <strong>Balance: </strong> 
           <span :class="[balance < 0 ? 'text-danger' : '']"> 
@@ -38,11 +33,27 @@
           </span>
         </div>
       </div>
+
+      <div>
+        <h6>Notes</h6>
+        {{ bag.comment }}
+      </div>
     </div>
+
+    <router-link class="fab shadow bg-light" :to="`/edit/${bag.bag_id}`">
+      <img
+        src="@/assets/icons/pencil.svg"
+        alt="edit"
+        height="25"
+        width="25"
+        class="mt-3"
+      />
+    </router-link>
   </div>
 </template>
 
 <script>
+import idb from '@/api/idb.js';
 import Item from "../components/Item";
 
 export default {
@@ -52,14 +63,22 @@ export default {
     return{
       total_budget: 0,
       total_expense: 0,
-      balance: 0
+      balance: 0,
+      bag: {},
     }
   },
-  computed: {
-    bag() {
-      let bag = this.$store.getters.getBag(this.$route.params.id)
-      let items = bag.items
-      
+  methods: {
+    async removeItem(itemId) {
+      this.bag.items = this.bag.items.filter(item => item.item_id !== itemId)
+      this.calcExpenses(this.bag.items)
+
+      let IDs = {
+        bagId: this.bag.bag_id,
+        itemId: itemId,
+      };
+      await idb.removeItem(IDs)
+    },
+    calcExpenses(items){
       let total_budget = items.reduce(function(sum, item) { 
         return sum + (parseInt(item.budget_price) * parseInt(item.quantity));
       }, 0)
@@ -71,21 +90,15 @@ export default {
       this.total_expense = total_expense
 
       this.balance = total_budget - total_expense
-
-      return bag;
-    },
+    }
   },
-  created() {
-    this.$store.dispatch('getBags');
-  },
-  methods: {
-    async removeItem(itemId) {
-      await this.$store.dispatch("removeItem", {
-        bagId: this.bag.bag_id,
-        itemId: itemId,
-      });
-    },
-  },
+  mounted() {
+    idb.getBag(this.$route.params.id)
+      .then((response) => {
+        this.bag = response;
+        this.calcExpenses(response.items)
+      })
+  }
 };
 </script>
 

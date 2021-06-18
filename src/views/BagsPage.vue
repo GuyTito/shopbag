@@ -36,23 +36,26 @@
 </template>
 
 <script>
+import idb from '@/api/idb.js';
 import BagList from "../components/BagList";
 
 export default {
   name: "BagsPage",
   components: { BagList },
-  computed: {
-    bags() {
-      return this.$store.getters.getBags;
-      // return this.$store.state.bags;
-    },
+  data(){
+    return {
+      bags: [],
+    }
   },
-  created() {
-    this.$store.dispatch('getBags');
+  mounted() {
+    idb.getBags()
+      .then((response) => {
+        this.bags = response;
+      })
   },
   methods: {
     async removeBag(bagId) {
-      await this.$store.dispatch("removeBag", bagId);
+      await idb.removeBag(bagId)
       this.$store.dispatch('getBags');
     },
   },

@@ -1,86 +1,11 @@
 <template>
-  <div id="edit-item">
-    <h5>Update items</h5>
-    <form @submit.prevent="updateItems">
-      <label for="item_name" class="form-label">Shopping item</label>
-      <input
-        class="form-control mb-2"
-        type="text"
-        v-model="item_name"
-        name="item_name"
-        required
-        placeholder="shopping item"
-      />
-
-      <label for="budget_price" class="form-label">Your budget price</label>
-      <input
-        class="form-control mb-2"
-        type="number"
-        min="0.00"
-        step="0.01"
-        v-model="budget_price"
-        name="budget_price"
-        placeholder="budget price"
-      />
-
-      <label for="market_price" class="form-label">Market price</label>
-      <input
-        class="form-control mb-2"
-        type="number"
-        min="0.00"
-        step="0.01"
-        v-model="market_price"
-        name="market_price"
-        placeholder="market price?"
-      />
-
-      <label for="quantity" class="form-label">Quantity</label>
-      <input
-        class="form-control mb-2"
-        type="number"
-        min="0"
-        step="1"
-        pattern="\d+"
-        v-model="quantity"
-        name="quantity"
-        placeholder="quantity"
-      />
-
-      <label for="bought_price" class="form-label">Price you bought</label>
-      <input
-        class="form-control mb-2"
-        type="number"
-        min="0.00"
-        step="0.01"
-        v-model="bought_price"
-        name="bought_price"
-        placeholder="price you bought"
-      />
-
-      <div class="d-flex justify-content-center mb-2">
-        <input
-          class="btn btn-primary mb-2"
-          type="submit"
-          value="Save Item"
-        />
-      </div>
-    </form>
-
-    <!-- display item after adding -->
-    <!-- <div v-for="item in items" :key="item.item_id">
-      <span @click="populateIItemFields(item)">{{ item.item_name }} </span>
-      <span>{{ item.budget_price }} </span>
-      <span>{{ item.market_price }} </span>
-      <span>{{ item.quantity }}</span>
-      <span>{{ item.bought_price }} </span>
-      <button @click="$emit('remove-item', item.item_id)" class="del">x</button>
-    </div> -->
-
+  <div>
+    <h5>Items</h5>
     <div class="mb-2">
       <small><em>*Tap on an item name to edit</em></small>
     </div>
 
-    <div v-for="item in items" :key="item.item_id">
+    <div v-for="item in prop_items" :key="item.item_id">
       <div class="d-flex justify-content-between">
         <div class="ms-2">
           <h6>
@@ -88,11 +13,11 @@
               {{ item.item_name }}
             </a>
           </h6>
-          <div>
-            <span>{{currency}} {{ item.budget_price }} </span>
-            <span class="ms-4">{{currency}} {{ item.market_price }} </span>
-            <span class="ms-4">{{ item.quantity }}</span>
-            <span class="ms-4">{{currency}} {{ item.bought_price }} </span>
+          <div class="text-black-50">
+            <span>b: {{currency}}{{ item.budget_price }} </span>
+            <span class="ms-4">m: {{currency}}{{ item.market_price }} </span>
+            <span class="ms-4">q: {{ item.quantity }}</span>
+            <span class="ms-4">ex: {{currency}}{{ item.bought_price }} </span>
           </div>
         </div>
 
@@ -111,46 +36,99 @@
       <hr class="bg-primary" />
 
     </div>
+
+    <h5 class="mt-4" id="edit-item">Update</h5>
+    <form @submit.prevent="updateItems">
+      <label for="item_name" class="form-label">Shopping item</label>
+      <input
+        class="form-control mb-2"
+        type="text"
+        v-model="items.item_name"
+        name="item_name"
+        required
+        placeholder="shopping item"
+      />
+
+      <label for="budget_price" class="form-label">Your budget price (b)</label>
+      <input
+        class="form-control mb-2"
+        type="number"
+        min="0.00"
+        step="0.01"
+        v-model="items.budget_price"
+        name="budget_price"
+        placeholder="budget price"
+      />
+
+      <label for="market_price" class="form-label">Market price (m)</label>
+      <input
+        class="form-control mb-2"
+        type="number"
+        min="0.00"
+        step="0.01"
+        v-model="items.market_price"
+        name="market_price"
+        placeholder="market price?"
+      />
+
+      <label for="quantity" class="form-label">Quantity (q)</label>
+      <input
+        class="form-control mb-2"
+        type="number"
+        min="0"
+        step="1"
+        pattern="\d+"
+        v-model="items.quantity"
+        name="quantity"
+        placeholder="quantity"
+      />
+
+      <label for="bought_price" class="form-label">Price you bought (ex)</label>
+      <input
+        class="form-control mb-2"
+        type="number"
+        min="0.00"
+        step="0.01"
+        v-model="items.bought_price"
+        name="bought_price"
+        placeholder="price you bought"
+      />
+
+      <div class="d-flex justify-content-center mb-4">
+        <input
+          class="btn btn-primary mb-2"
+          type="submit"
+          value="Save Item"
+        />
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
   name: "EdiItem",
-  props: ["items", "currency"],
+  props: ["prop_items", "currency"],
   data() {
     return {
-      item_id: null,
-      item_name: "",
-      budget_price: null,
-      market_price: null,
-      purchased: null,
-      bought_price: null,
-      quantity: null,
+      items : {
+        item_id: null,
+        item_name: null,
+        budget_price: null,
+        market_price: null,
+        purchased: null,
+        bought_price: null,
+        quantity: null,
+      }
     };
   },
   methods: {
     resetFields() {
-      this.item_id = null;
-      this.item_name = "";
-      this.budget_price = null;
-      this.market_price = null;
-      this.purchased = null;
-      this.bought_price = null;
-      this.quantity = null;
+      this.items = {}
     },
     updateItems() {
-      if (this.item_id !== null) {
-        const oldItem = {
-          item_id: this.item_id,
-          item_name: this.item_name,
-          budget_price: this.budget_price,
-          market_price: this.market_price,
-          purchased: this.purchased,
-          bought_price: this.bought_price,
-          quantity: this.quantity,
-        };
-        this.$emit("update-items", oldItem);
+      if (this.items.item_id !== null) {
+        this.$emit("update-items", this.items);
       } else {
         this.addItem();
       }
@@ -160,24 +138,18 @@ export default {
     addItem() {
       const newItem = {
         item_id: new Date().toISOString(),
-        item_name: this.item_name,
-        budget_price: this.budget_price != null ? this.budget_price : 0,
-        market_price: this.market_price != null ? this.market_price : 0,
+        item_name: this.items.item_name,
+        budget_price: this.items.budget_price != null ? this.items.budget_price : 0,
+        market_price: this.items.market_price != null ? this.items.market_price : 0,
         purchased: false,
-        bought_price: this.bought_price != null ? this.bought_price : 0,
-        quantity: this.quantity != null ? this.quantity : 0,
+        bought_price: this.items.bought_price != null ? this.items.bought_price : 0,
+        quantity: this.items.quantity != null ? this.items.quantity : 0,
       };
       this.$emit("add-item", newItem);
       this.resetFields();
     },
     populateIItemFields(item) {
-      this.item_id = item.item_id;
-      this.item_name = item.item_name;
-      this.budget_price = item.budget_price;
-      this.market_price = item.market_price;
-      this.purchased = item.purchased;
-      this.bought_price = item.bought_price;
-      this.quantity = item.quantity;
+      this.items = item
     },
   },
 };

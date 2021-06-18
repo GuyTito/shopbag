@@ -1,6 +1,7 @@
 <template>
   <div>
     <form @submit.prevent="addItem">
+      <label for="item_name" class="form-label">Shopping item</label>
       <input
         class="form-control mb-2"
         type="text"
@@ -9,6 +10,8 @@
         required
         placeholder="shopping item"
       />
+      
+      <label for="budget_price" class="form-label">Your budget price (b)</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -18,6 +21,8 @@
         name="budget_price"
         placeholder="budget price"
       />
+      
+      <label for="market_price" class="form-label">Market price (m)</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -25,8 +30,10 @@
         step="0.01"
         v-model="market_price"
         name="market_price"
-        placeholder="market price?"
+        placeholder="market price"
       />
+      
+      <label for="quantity" class="form-label">Quantity (q)</label>
       <input
         class="form-control mb-2"
         type="number"
@@ -37,6 +44,8 @@
         name="quantity"
         placeholder="quantity"
       />
+      
+      <label for="bought_price" class="form-label">Price you bought (ex)</label>
       <input
         class="form-control mb-2"
         type="number"
