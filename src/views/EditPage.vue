@@ -86,7 +86,6 @@ export default {
   mounted() {
     idb.getBag(this.$route.params.id)
       .then((response) => {
-        console.log(response);
         this.bag = response;
       })
   }
