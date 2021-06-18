@@ -13,7 +13,12 @@
               {{ item.item_name }}
             </a>
           </h6>
-          <Item />
+          <div class="text-black-50">
+            <span>b: {{currency}}{{ item.budget_price }} </span>
+            <span class="ms-4">m: {{currency}}{{ item.market_price }} </span>
+            <span class="ms-4">q: {{ item.quantity }}</span>
+            <span class="ms-4">ex: {{currency}}{{ item.bought_price }} </span>
+          </div>
         </div>
 
         <div class="mt-2">
@@ -101,10 +106,7 @@
 </template>
 
 <script>
-import Item from "../components/Item";
-
 export default {
-  components: { Item },
   name: "EdiItem",
   props: ["prop_items", "currency"],
   data() {

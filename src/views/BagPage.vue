@@ -19,7 +19,7 @@
 
     <div class="v-center p-2">
       <div v-for="item in bag.items" :key="item.item_id">
-        <ItemList :item="item" :currency="bag.currency" @del-item="removeItem" />
+        <Item :item="item" :currency="bag.currency" @del-item="removeItem" />
         <hr class="bg-primary" />
       </div>
 
