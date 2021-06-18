@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid my-4 page-head">
-    <h4>Update bag and items</h4>
+    <h4>Update bag</h4>
     <form @submit.prevent="updateBagItem" class="v-center mt-3">
       <input
         class="form-control mb-2"
@@ -21,7 +21,7 @@
         placeholder="Some notes..."
       ></textarea>
 
-      <div class="mb-2 form-control">
+      <div class="mb-5 form-control">
         <span class="me-3">Select preferred currency:</span>
         <br>
         <input class="me-1" type="radio" id="cedi" value="₵" v-model="bag.currency" required />
