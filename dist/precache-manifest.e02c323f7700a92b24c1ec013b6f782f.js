@@ -1,22 +1,22 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ea6126d4c557120304b5",
+    "revision": "82063d4ae52a42ef2fdd",
     "url": "/css/about.1a85aea5.css"
   },
   {
-    "revision": "4fdd2a62c59d7ac71c95",
+    "revision": "37029ee8048d2227b0c8",
     "url": "/css/app.f028e1b2.css"
   },
   {
-    "revision": "8a7ba0bb18175bd04873",
-    "url": "/css/chunk-f2d2daac.b2ffbb2b.css"
+    "revision": "dc65f697ac2a7191a060",
+    "url": "/css/chunk-2e83634e.677da543.css"
   },
   {
-    "revision": "3341c9f6253fe5bedad7",
-    "url": "/css/chunk-f6b72880.87aecc30.css"
+    "revision": "74e6a3d026bbb8d18cba",
+    "url": "/css/chunk-8b2e5094.072e7986.css"
   },
   {
-    "revision": "c2c66c37f607bed13cfb",
+    "revision": "33583abc0888be47f144",
     "url": "/css/chunk-vendors.9b9fa459.css"
   },
   {
@@ -56,32 +56,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/stock_shopbag_prices.22a28c9b.png"
   },
   {
-    "revision": "285d8ff948850b74159f9d5cac81a8d4",
+    "revision": "c563e9477d33f2191fc0783e98147905",
     "url": "/index.html"
   },
   {
-    "revision": "ea6126d4c557120304b5",
-    "url": "/js/about.e3683ddd.js"
+    "revision": "82063d4ae52a42ef2fdd",
+    "url": "/js/about.11cef708.js"
   },
   {
-    "revision": "4fdd2a62c59d7ac71c95",
-    "url": "/js/app.32f41b62.js"
+    "revision": "37029ee8048d2227b0c8",
+    "url": "/js/app.0db9ec08.js"
   },
   {
-    "revision": "11171139c309f46d7465",
-    "url": "/js/chunk-1a80fee3.8db63c6c.js"
+    "revision": "00e08c63a12404483101",
+    "url": "/js/chunk-2d2262ec.857c80c6.js"
   },
   {
-    "revision": "8a7ba0bb18175bd04873",
-    "url": "/js/chunk-f2d2daac.3eb29596.js"
+    "revision": "dc65f697ac2a7191a060",
+    "url": "/js/chunk-2e83634e.77bf9b89.js"
   },
   {
-    "revision": "3341c9f6253fe5bedad7",
-    "url": "/js/chunk-f6b72880.31618122.js"
+    "revision": "c1bcbe6c3d311c194816",
+    "url": "/js/chunk-439b4bb7.aca8810f.js"
   },
   {
-    "revision": "c2c66c37f607bed13cfb",
-    "url": "/js/chunk-vendors.5d3d2de2.js"
+    "revision": "74e6a3d026bbb8d18cba",
+    "url": "/js/chunk-8b2e5094.3aabe11a.js"
+  },
+  {
+    "revision": "33583abc0888be47f144",
+    "url": "/js/chunk-vendors.a6b02724.js"
   },
   {
     "revision": "bd2623f91a7cc8c695a70eaa353e3326",
