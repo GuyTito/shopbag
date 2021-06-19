@@ -7,15 +7,11 @@
           <BagListItem :bag="bag" />
         </div>
 
-        <div class="mt-2">
-          <div @click="$emit('remove-bag', bag.bag_id)" class="bg-secondary rounded-circle p-2" >
-            <img
-              src="@/assets/icons/bin.svg"
-              alt="trash"
-              height="25"
-              width="25"
-            />
-          </div>
+        <div class="mt-2" @click="$emit('remove-bag', bag.bag_id)">
+          <img
+            src="@/assets/icons/x-circle.svg"
+            alt="trash"
+          />
         </div>
       </div>
 

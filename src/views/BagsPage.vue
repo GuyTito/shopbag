@@ -55,8 +55,8 @@ export default {
   },
   methods: {
     async removeBag(bagId) {
+      this.bags = this.bags.filter(bag => bag.bag_id !== bagId)
       await idb.removeBag(bagId)
-      this.$store.dispatch('getBags');
     },
   },
 };
