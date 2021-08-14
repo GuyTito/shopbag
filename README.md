@@ -6,7 +6,7 @@ A simple grocery list progressive web app to track items and prices as you shop.
 
 
 ### NB:
-bag is the same as shopping cart or bag that contains shopping items
+bag is the same as shopping cart or bag that contains shopping items.
 
 
 
