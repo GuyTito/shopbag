@@ -5,7 +5,7 @@
         <img src="@/assets/img/hero2.svg" alt="hero" class="img-fluid" />
       </div>
       <p class="display-6 text-center mb-5">
-        Track your grocery items and their prices as you shop
+        Track your grocery items and their prices as you shop.
       </p>
       <div class="d-flex justify-content-center mb-5">
         <router-link to="/bags" class="btn btn-lg btn-primary">
