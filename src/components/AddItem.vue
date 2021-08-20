@@ -37,7 +37,7 @@
       <input
         class="form-control mb-2"
         type="number"
-        min="0"
+        min="1"
         step="1"
         pattern="\d+"
         v-model="quantity"
@@ -53,7 +53,7 @@
         step="0.01"
         v-model="bought_price"
         name="bought_price"
-        placeholder="price you  bought"
+        placeholder="price you bought"
       />
 
       <div class="d-flex justify-content-center mb-2">
@@ -76,7 +76,7 @@ export default {
       budget_price: null,
       market_price: null,
       bought_price: null,
-      quantity: null,
+      quantity: 1,
     };
   },
   methods: {

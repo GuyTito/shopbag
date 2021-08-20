@@ -71,7 +71,7 @@
       <input
         class="form-control mb-2"
         type="number"
-        min="0"
+        min="1"
         step="1"
         pattern="\d+"
         v-model="items.quantity"
@@ -114,7 +114,7 @@ export default {
         market_price: null,
         purchased: null,
         bought_price: null,
-        quantity: null,
+        quantity: 1,
       }
     };
   },
