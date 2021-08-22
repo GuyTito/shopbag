@@ -121,6 +121,7 @@ export default {
   methods: {
     resetFields() {
       this.items = {}
+      this.items.quantity = 1;
     },
     updateItems() {
       if (this.items.item_id !== null) {
@@ -139,7 +140,7 @@ export default {
         market_price: this.items.market_price != null ? this.items.market_price : 0,
         purchased: false,
         bought_price: this.items.bought_price != null ? this.items.bought_price : 0,
-        quantity: this.items.quantity != null ? this.items.quantity : 0,
+        quantity: this.items.quantity,
       };
       this.$emit("add-item", newItem);
       this.resetFields();

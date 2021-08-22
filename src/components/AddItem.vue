@@ -88,7 +88,7 @@ export default {
         market_price: this.market_price != null ? this.market_price : 0,
         purchased: false,
         bought_price: this.bought_price != null ? this.bought_price : 0,
-        quantity: this.quantity != null ? this.quantity : 0,
+        quantity: this.quantity,
       };
       this.$emit("add-item", newItem);
 
@@ -96,7 +96,7 @@ export default {
       this.budget_price = null;
       this.market_price = null;
       this.bought_price = null;
-      this.quantity = null;
+      this.quantity = 1;
     },
   },
 };
