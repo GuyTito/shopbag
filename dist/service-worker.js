@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.bb7d2f15acc59784cdbd5c31ed4f44db.js"
+  "/precache-manifest.65906658cfed1d90f4487b74b801c9fa.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "shopping_tracker"});
